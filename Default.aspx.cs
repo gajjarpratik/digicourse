@@ -19,7 +19,7 @@ public partial class _Default : System.Web.UI.Page
         string password = Password.Text;
 
         //Connection String
-        string connString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Pratik\digicourse\App_Data\Database.mdf;Integrated Security=True";
+        string connString = System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         string query = "SELECT password FROM login WHERE email = @email";
         string p = null;
 
