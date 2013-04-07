@@ -11,7 +11,7 @@
     <div>
         Email: <asp:TextBox ID="Email" runat="server"></asp:TextBox><br />
         Password: <asp:TextBox ID="Password" runat="server"></asp:TextBox><br />
-        <asp:Button ID="Login" runat="server" Text="Login" OnClick="Login_Click" />
+        <asp:Button ID="Login" runat="server" Text="Login" OnClick="Login_Click" /><asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True" ProviderName="System.Data.SqlClient"></asp:SqlDataSource>
     </div>
     </form>
 </body>
