@@ -2,9 +2,13 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head runat="server">
-    <title></title>
+    <meta charset="utf-8" />
+    <title>DigiCourse</title>
+
+    <link rel="stylesheet" href="master.css" type="text/css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 </head>
 <body>
     <form id="form1" runat="server">
