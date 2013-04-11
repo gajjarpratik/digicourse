@@ -5,17 +5,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head runat="server">
     <meta charset="utf-8"/>
-
-    <title>DigiCourse</title>
     <asp:ContentPlaceHolder id="head" runat="server">
 
-
     </asp:ContentPlaceHolder>
+    
+    <link rel="stylesheet" href="stylesheets/master.css" type="text/css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 </head>
 <body class="body">
+     
+    <div class="header">
+        <img src="Images/logo.gif" />
+    </div>
+    <header class="mainHeader">      
+        <nav>
+            <ul>
+                <li class="active"><a href="Default.aspx">Home</a></li>
+                <li><a href="Default.aspx">Course Description</a></li>
+                <li><a href="Default.aspx">Professor Bio</a></li>
+                <li><a href="Default.aspx">About Us</a></li>
+            </ul>
+        </nav>       
+    </header>
+    
+   
     <form id="form1" runat="server">
+
     <div class="mainContent">
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        <asp:ContentPlaceHolder id="MainContentPlaceHolder" runat="server">
         
         </asp:ContentPlaceHolder>
     </div>
