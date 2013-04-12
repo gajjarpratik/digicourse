@@ -11,4 +11,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
 
     }
+
+    //after logout redirect to default
+    protected void OnLogout(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Default.aspx");
+    }
 }

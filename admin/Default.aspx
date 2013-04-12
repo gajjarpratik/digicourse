@@ -2,4 +2,5 @@
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     Admin
+    <asp:HyperLink ID="HyperLink1" NavigateUrl="~/logout.aspx" runat="server">Log Out</asp:HyperLink>
 </asp:Content>

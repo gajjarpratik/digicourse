@@ -1,4 +1,6 @@
-﻿body {
+﻿html,body {
+    height:100%;
+    margin:0;
     color:#000305;
     font-size:87.5%;
     font-family:Arial;
@@ -16,10 +18,16 @@ a {
     a:hover, a:active {
     }
 
-.body {
-    margin:0 auto;
+form {
+  height:100%;
+}
+
+.container {
     width:70%;
-    clear:both;
+    min-height: 93%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto;
 }
 
 .logo{
@@ -64,8 +72,13 @@ a {
     -webkit-border-radius:3px;
 }
 
+.footer,.push {
+    height:35px;
+}
+
 .footer{
-    height:20px;
+    width:70%;
+    margin:0 auto;
     background-color:#2F3C40;
     border-radius:3px;
     -moz-border-radius:3px;
@@ -73,6 +86,7 @@ a {
 }
 
 .footer p{
+    padding:2px;
     text-align:center;
     color:#fff;
 }
