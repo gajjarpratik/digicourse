@@ -10,17 +10,16 @@
     </asp:ContentPlaceHolder>
     
     <link rel="stylesheet" href="stylesheets/master.css" type="text/css" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    
 </head>
 <body class="body">
      
-    <div class="header">
-        <img src="Images/logo.gif" />
-    </div>
+    <asp:Image ID="Image1" CssClass="logo" ImageUrl="~/images/logo.gif" runat="server" />
+    
     <header class="mainHeader">      
         <nav>
             <ul>
-                <li class="active"><a href="Default.aspx">Home</a></li>
+                <li><a href="Default.aspx">Home</a></li>
                 <li><a href="Default.aspx">Course Description</a></li>
                 <li><a href="Default.aspx">Professor Bio</a></li>
                 <li><a href="Default.aspx">About Us</a></li>
@@ -28,7 +27,6 @@
         </nav>       
     </header>
     
-   
     <form id="form1" runat="server">
 
     <div class="mainContent">
@@ -37,5 +35,9 @@
         </asp:ContentPlaceHolder>
     </div>
     </form>
+
+    <div class="footer">
+        <p>2013 &copy; DigiCourse</p>
+    </div>
 </body>
 </html>
