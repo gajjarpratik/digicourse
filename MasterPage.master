@@ -10,31 +10,35 @@
     </asp:ContentPlaceHolder>
     
     <link rel="stylesheet" href="stylesheets/master.css" type="text/css" />
-    
+    <meta name="viewport" content="width=device-width,initial-scale:1.0" />
 </head>
 <body>
     <div class="container">
     <form id="form1" runat="server">
-    <asp:Image ID="Image1" CssClass="logo" ImageUrl="~/images/logo.gif" runat="server" />
-    <asp:LoginView ID="LoginView1" runat="server">
-         <AnonymousTemplate>
-             <ul>
-                 <li id="login">
-                     <asp:LoginStatus ID="LoginStatus1" runat="server" />
-                 </li>
-             </ul>
-         </AnonymousTemplate>
-         <LoggedInTemplate>
-             <ul>
-                 <li id="login">
-                     <asp:LoginStatus ID="LoginStatus1" OnLoggedOut="OnLogout" runat="server" />
-                 </li>
-                 <li id="signup">
-                     <a href="/member/MyProfile.aspx">Profile</a>
-                 </li>
-             </ul>
-         </LoggedInTemplate>
-    </asp:LoginView>
+        <div class="header">
+            <div class="logo">
+                <asp:Image ID="Image1" CssClass="image" ImageUrl="~/images/logo.gif" runat="server" />
+            </div>
+            <div class="login-status">
+                <asp:LoginView ID="LoginView1" runat="server">
+                    <AnonymousTemplate>
+                        <ul>
+                            <li>
+                                <asp:LoginStatus ID="LoginStatus1" CssClass="login-link" runat="server" />
+                            </li>
+                        </ul>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <ul>
+                            <li>
+                                <asp:LoginStatus ID="LoginStatus1" OnLoggedOut="OnLogout" CssClass="login-link" runat="server" />
+                            </li>
+                        </ul>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+        </div>
+    <div class="navigation">
     <header class="mainHeader">      
         <nav>
             <ul>
@@ -45,7 +49,7 @@
             </ul>
         </nav>       
     </header>
-    
+    </div>
     <div class="mainContent">
         <asp:ContentPlaceHolder id="MainContentPlaceHolder" runat="server">
         

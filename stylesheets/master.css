@@ -32,9 +32,44 @@ form {
     margin: 0 auto -40px;
 }
 
+.header {
+    width:100%;
+    margin: 0px;
+	padding: 0px;
+    clear:both;
+}
+
 .logo{
-    margin:1%;
+    float:left;
     width:30%;
+    margin: 0px;
+	padding: 0px;
+}
+
+.image {
+    width:100%;
+}
+
+.login-status {
+    width:70%;
+    float:left;
+    margin: 0 auto;
+	padding: 0px;
+}
+
+.login-status ul li {
+    list-style:none; 
+}
+
+.login-link {
+    margin:0 auto;
+    font-size:20px;
+    color:#66AA33;
+}
+
+.navigation {
+    width:100%;
+    float:left;
 }
 
 .mainHeader nav {
@@ -74,6 +109,12 @@ form {
     -webkit-border-radius:3px;
 }
 
+.mainContent {
+    float:left;
+    width:100%;
+    padding:5px;
+}
+
 .footer, .push {
     height:40px;
 }
@@ -91,4 +132,55 @@ form {
     padding:8px;
     text-align:center;
     color:#fff;
+}
+
+@media only screen and (min-width:150px) and (max-width:600px) 
+{
+    .container {
+        width:90%;
+    }
+
+    .logo{
+        float:none;
+        width:70%;
+        height:90%;
+        margin:0 auto;        
+    }
+
+    .login-status {
+        float:none;
+        width:100%;
+        text-align:center;
+    }
+
+    .mainHeader nav {
+        height:160px;
+    }
+
+    .mainHeader nav ul {
+        padding:0;
+    }
+    
+    .mainHeader nav ul li{
+        width:100%;
+        text-align:center;
+    }
+    
+    .mainHeader nav a:link, .mainHeader nav a:visited{
+        display:block;
+        padding:10px 20px;
+        height:20px;
+    }
+
+    .mainContent {
+        padding:10px;
+    }
+
+    .footer, .push {
+        height:40px;
+    }
+
+    .footer{
+        width:90%;
+    }
 }
