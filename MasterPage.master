@@ -20,6 +20,7 @@
                 <asp:Image ID="Image1" CssClass="image" ImageUrl="~/images/logo.gif" runat="server" />
             </div>
             <div class="login-status">
+                <div class="login-status-position">
                 <asp:LoginView ID="LoginView1" runat="server">
                     <AnonymousTemplate>
                         <ul>
@@ -36,6 +37,7 @@
                         </ul>
                     </LoggedInTemplate>
                 </asp:LoginView>
+                </div>
             </div>
         </div>
     <div class="navigation">
@@ -59,6 +61,7 @@
     <div class="push"></div>
     </div>
     <div class="footer">
+        <hr />        
         <p>2013 &copy; DigiCourse</p>
     </div>
 

@@ -52,13 +52,18 @@ form {
 
 .login-status {
     width:70%;
-    float:left;
-    margin: 0 auto;
-	padding: 0px;
 }
 
-.login-status ul li {
+.login-status-position {
+    width:100%;
+    margin-left:35%;
+    padding-top:5%;
+    padding-right:5%;
+}
+
+.login-status-position ul li {
     list-style:none; 
+    float:right;
 }
 
 .login-link {
@@ -115,23 +120,25 @@ form {
     padding:5px;
 }
 
-.footer, .push {
+.push {
     height:40px;
 }
 
 .footer{
+    height:40px;
     width:70%;
     margin:0 auto;
-    background-color:#2F3C40;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    -webkit-border-radius:3px;
 }
 
 .footer p{
-    padding:8px;
+    margin:0 auto;
+    padding:1px 0 4px 0;
     text-align:center;
-    color:#fff;
+    color:#2F3C40;
+}
+
+.footer hr{
+    color:#2F3C40;
 }
 
 @media only screen and (min-width:150px) and (max-width:600px) 
@@ -148,9 +155,20 @@ form {
     }
 
     .login-status {
-        float:none;
         width:100%;
         text-align:center;
+    }
+
+    .login-status-position {
+        
+        width:100%;
+        margin-left:0%;
+        padding-top:1%;
+        padding-right:0%;
+    }
+    
+    .login-status-position ul li {
+        float:none;
     }
 
     .mainHeader nav {
@@ -176,11 +194,4 @@ form {
         padding:10px;
     }
 
-    .footer, .push {
-        height:40px;
-    }
-
-    .footer{
-        width:90%;
-    }
 }
