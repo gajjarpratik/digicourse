@@ -58,18 +58,39 @@ form {
     width:100%;
     margin-left:35%;
     padding-top:5%;
-    padding-right:5%;
+    padding-right:5%;   
 }
 
 .login-status-position ul li {
     list-style:none; 
     float:right;
+    color:#FFF;
+    background-color:#2F3C40;
+     border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    padding:5px;
+    margin:2px;
+}
+
+.login-status-position ul li:hover{
+    background-color:#66AA33;
+    text-shadow:none;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+.login-name {
+    float:right;
+    font-size:20px;
+    margin:0 15px;
 }
 
 .login-link {
     margin:0 auto;
     font-size:20px;
-    color:#66AA33;
+    color:#FFF;
 }
 
 .navigation {
@@ -155,20 +176,20 @@ form {
     }
 
     .login-status {
-        width:100%;
-        text-align:center;
+        width:100%;        
     }
 
-    .login-status-position {
-        
+    .login-status-position {        
         width:100%;
         margin-left:0%;
+        margin-bottom:2%;
         padding-top:1%;
         padding-right:0%;
+        padding-bottom:5%;
     }
     
     .login-status-position ul li {
-        float:none;
+        
     }
 
     .mainHeader nav {

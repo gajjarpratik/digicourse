@@ -17,10 +17,11 @@
     <form id="form1" runat="server">
         <div class="header">
             <div class="logo">
-                <asp:Image ID="Image1" CssClass="image" ImageUrl="~/images/logo.gif" runat="server" />
+                <a href="Default.aspx"><asp:Image ID="Image1" CssClass="image" ImageUrl="~/images/logo.gif" runat="server" /></a>
             </div>
             <div class="login-status">
                 <div class="login-status-position">
+                
                 <asp:LoginView ID="LoginView1" runat="server">
                     <AnonymousTemplate>
                         <ul>
@@ -32,11 +33,12 @@
                     <LoggedInTemplate>
                         <ul>
                             <li>
-                                <asp:LoginStatus ID="LoginStatus1" OnLoggedOut="OnLogout" CssClass="login-link" runat="server" />
+                                <asp:LoginStatus ID="LoginStatus2" OnLoggedOut="OnLogout" CssClass="login-link" runat="server" />
                             </li>
                         </ul>
                     </LoggedInTemplate>
                 </asp:LoginView>
+                <asp:LoginName ID="LoginName1" CssClass="login-name"  runat="server" />
                 </div>
             </div>
         </div>
