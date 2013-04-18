@@ -9,6 +9,7 @@
 
     </asp:ContentPlaceHolder>
     
+    <link rel="icon" type="image/gif" href="images/icon.gif">
     <link rel="stylesheet" href="stylesheets/master.css" type="text/css" />
     <meta name="viewport" content="width=device-width,initial-scale:1.0" />
 </head>
@@ -60,10 +61,10 @@
         </asp:ContentPlaceHolder>
     </div>
     </form>
+    <div style="clear:both"></div>
     <div class="push"></div>
     </div>
-    <div class="footer">
-        <hr />        
+    <div class="footer">            
         <p>2013 &copy; DigiCourse</p>
     </div>
 

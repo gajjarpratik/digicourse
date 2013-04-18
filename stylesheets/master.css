@@ -12,6 +12,7 @@
 
 a {
     text-decoration:none;
+
 }
 
     a:link, a:visited {
@@ -46,8 +47,13 @@ form {
 	padding: 0px;
 }
 
+.logo a{
+    border:none;    
+}
+
 .image {
     width:100%;
+    border:none;
 }
 
 .login-status {
@@ -83,13 +89,12 @@ form {
 
 .login-name {
     float:right;
-    font-size:20px;
     margin:0 15px;
 }
 
 .login-link {
     margin:0 auto;
-    font-size:20px;
+    font-size:16px;
     color:#FFF;
 }
 
@@ -141,6 +146,7 @@ form {
     padding:5px;
 }
 
+
 .push {
     height:40px;
 }
@@ -149,13 +155,17 @@ form {
     height:40px;
     width:70%;
     margin:0 auto;
+    background-color:#2F3C40;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
 }
 
-.footer p{
+.footer p{    
     margin:0 auto;
-    padding:1px 0 4px 0;
+    padding:8px;
     text-align:center;
-    color:#2F3C40;
+    color:#FFF;
 }
 
 .footer hr{
@@ -215,4 +225,7 @@ form {
         padding:10px;
     }
 
+    .footer {
+        width:90%;
+    }
 }
