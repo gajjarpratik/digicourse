@@ -27,7 +27,7 @@ form {
 
 .container {
     width:70%;
-    min-height: 97%;
+    min-height: 100%;
     height: auto !important;
     height: 100%;
     margin: 0 auto -40px;
