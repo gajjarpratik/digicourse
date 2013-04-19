@@ -16,11 +16,11 @@ public partial class _Default : System.Web.UI.Page
             if(Roles.IsUserInRole("admin"))
                 Response.Redirect("~/admin/Default.aspx");
             else if (Roles.IsUserInRole("professor"))
-                Response.Redirect("~/professor/Default.aspx");
+                Response.Redirect("~/professor/Dashboard.aspx");
             else if (Roles.IsUserInRole("ta"))
-                Response.Redirect("~/professor/Default.aspx");
+                Response.Redirect("~/ta/Dashboard.aspx");
             else if (Roles.IsUserInRole("student"))
-                Response.Redirect("~/professor/Default.aspx");
+                Response.Redirect("~/student/Dashboard.aspx");
             else
                 Response.Redirect("~/login.aspx");
         }
@@ -35,18 +35,18 @@ public partial class _Default : System.Web.UI.Page
         }
         else if (Roles.IsUserInRole(Login1.UserName, "professor"))
         {
-            Response.Redirect("~/professor/Default.aspx");
+            Response.Redirect("~/professor/Dashboard.aspx");
         }
         else if (Roles.IsUserInRole(Login1.UserName, "ta"))
         {
-            Response.Redirect("~/ta/Default.aspx");
+            Response.Redirect("~/ta/Dashboard.aspx");
         }
         else if (Roles.IsUserInRole(Login1.UserName, "student"))
         {
-            Response.Redirect("~/student/Default.aspx");
+            Response.Redirect("~/student/Dashboard.aspx");
         }
         else
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect("~/Dashboard.aspx");
 
     }
 }

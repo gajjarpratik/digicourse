@@ -1,0 +1,50 @@
+﻿h4{
+    width:auto;
+    padding:5px;
+    color:#FFF;
+    background-color:#2F3C40;
+     border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+.left {
+    float: left;
+    width: 35%;
+}
+
+.course-material {
+    
+}
+
+.assignments {
+}
+
+.annoucements {
+    float:left;
+    width:60%;
+    margin-left:5%;
+}
+
+@media only screen and (min-width:150px) and (max-width:600px) {
+
+    .left {
+        float: none;
+        margin:0 auto;
+        width: 95%;
+    }
+
+    .course-material {
+        
+    }
+    
+    .assignments {
+    }
+    
+    .annoucements {
+        float: none;
+        margin:0 auto;
+        width: 95%;
+    }
+
+}
