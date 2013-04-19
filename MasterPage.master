@@ -47,15 +47,15 @@
     <header class="mainHeader">      
         <nav>
             <ul>
-                <li><a href="Default.aspx">Home</a></li>
-                <li><a href="Default.aspx">Course Description</a></li>
-                <li><a href="Default.aspx">Professor Bio</a></li>
-                <li><a href="Default.aspx">About Us</a></li>
+                <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx" Text="Home"></asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx" Text="Course Description">Coure Description</asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Default.aspx" Text="Professor Info"></asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Default.aspx" Text="About Us"></asp:HyperLink></li>
             </ul>
         </nav>       
     </header>
     </div>
-    <div class="mainContent">
+    <div class="mainContent">                
         <asp:ContentPlaceHolder id="MainContentPlaceHolder" runat="server">
         
         </asp:ContentPlaceHolder>
