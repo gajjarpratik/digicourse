@@ -11,6 +11,7 @@ input:focus,textarea:focus {
     margin:10% auto;
     width:250px;
     text-align:center;
+    padding:5px;
     border-style:solid;
     border-radius:3px;
     border-color:#2F3C40;

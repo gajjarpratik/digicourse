@@ -9,32 +9,41 @@
 
     </asp:ContentPlaceHolder>
     
+    <link rel="icon" type="image/gif" href="images/icon.gif">
     <link rel="stylesheet" href="stylesheets/master.css" type="text/css" />
-    
+    <meta name="viewport" content="width=device-width,initial-scale:1.0" />
 </head>
 <body>
     <div class="container">
     <form id="form1" runat="server">
-    <asp:Image ID="Image1" CssClass="logo" ImageUrl="~/images/logo.gif" runat="server" />
-    <asp:LoginView ID="LoginView1" runat="server">
-         <AnonymousTemplate>
-             <ul>
-                 <li id="login">
-                     <asp:LoginStatus ID="LoginStatus1" runat="server" />
-                 </li>
-             </ul>
-         </AnonymousTemplate>
-         <LoggedInTemplate>
-             <ul>
-                 <li id="login">
-                     <asp:LoginStatus ID="LoginStatus1" OnLoggedOut="OnLogout" runat="server" />
-                 </li>
-                 <li id="signup">
-                     <a href="/member/MyProfile.aspx">Profile</a>
-                 </li>
-             </ul>
-         </LoggedInTemplate>
-    </asp:LoginView>
+        <div class="header">
+            <div class="logo">
+                <a href="Default.aspx"><asp:Image ID="Image1" CssClass="image" ImageUrl="~/images/logo.gif" runat="server" /></a>
+            </div>
+            <div class="login-status">
+                <div class="login-status-position">
+                
+                <asp:LoginView ID="LoginView1" runat="server">
+                    <AnonymousTemplate>
+                        <ul>
+                            <li>
+                                <asp:LoginStatus ID="LoginStatus1" CssClass="login-link" runat="server" />
+                            </li>
+                        </ul>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <ul>
+                            <li>
+                                <asp:LoginStatus ID="LoginStatus2" OnLoggedOut="OnLogout" CssClass="login-link" runat="server" />
+                            </li>
+                        </ul>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+                <asp:LoginName ID="LoginName1" CssClass="login-name"  runat="server" />
+                </div>
+            </div>
+        </div>
+    <div class="navigation">
     <header class="mainHeader">      
         <nav>
             <ul>
@@ -45,16 +54,17 @@
             </ul>
         </nav>       
     </header>
-    
+    </div>
     <div class="mainContent">
         <asp:ContentPlaceHolder id="MainContentPlaceHolder" runat="server">
         
         </asp:ContentPlaceHolder>
     </div>
     </form>
+    <div style="clear:both"></div>
     <div class="push"></div>
     </div>
-    <div class="footer">
+    <div class="footer">            
         <p>2013 &copy; DigiCourse</p>
     </div>
 

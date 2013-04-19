@@ -12,6 +12,7 @@
 
 a {
     text-decoration:none;
+
 }
 
     a:link, a:visited {
@@ -32,9 +33,74 @@ form {
     margin: 0 auto -40px;
 }
 
+.header {
+    width:100%;
+    margin: 0px;
+	padding: 0px;
+    clear:both;
+}
+
 .logo{
-    margin:1%;
+    float:left;
     width:30%;
+    margin: 0px;
+	padding: 0px;
+}
+
+.logo a{
+    border:none;    
+}
+
+.image {
+    width:100%;
+    border:none;
+}
+
+.login-status {
+    width:70%;
+}
+
+.login-status-position {
+    width:100%;
+    margin-left:35%;
+    padding-top:5%;
+    padding-right:5%;   
+}
+
+.login-status-position ul li {
+    list-style:none; 
+    float:right;
+    color:#FFF;
+    background-color:#2F3C40;
+     border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    padding:5px;
+    margin:2px;
+}
+
+.login-status-position ul li:hover{
+    background-color:#66AA33;
+    text-shadow:none;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+.login-name {
+    float:right;
+    margin:0 15px;
+}
+
+.login-link {
+    margin:0 auto;
+    font-size:16px;
+    color:#FFF;
+}
+
+.navigation {
+    width:100%;
+    float:left;
 }
 
 .mainHeader nav {
@@ -74,11 +140,19 @@ form {
     -webkit-border-radius:3px;
 }
 
-.footer, .push {
+.mainContent {
+    float:left;
+    width:100%;
+    padding:5px;
+}
+
+
+.push {
     height:40px;
 }
 
 .footer{
+    height:40px;
     width:70%;
     margin:0 auto;
     background-color:#2F3C40;
@@ -87,8 +161,71 @@ form {
     -webkit-border-radius:3px;
 }
 
-.footer p{
+.footer p{    
+    margin:0 auto;
     padding:8px;
     text-align:center;
-    color:#fff;
+    color:#FFF;
+}
+
+.footer hr{
+    color:#2F3C40;
+}
+
+@media only screen and (min-width:150px) and (max-width:600px) 
+{
+    .container {
+        width:90%;
+    }
+
+    .logo{
+        float:none;
+        width:70%;
+        height:90%;
+        margin:0 auto;        
+    }
+
+    .login-status {
+        width:100%;        
+    }
+
+    .login-status-position {        
+        width:100%;
+        margin-left:0%;
+        margin-bottom:2%;
+        padding-top:1%;
+        padding-right:0%;
+        padding-bottom:5%;
+    }
+    
+    .login-status-position ul li {
+        
+    }
+
+    .mainHeader nav {
+        height:160px;
+    }
+
+    .mainHeader nav ul {
+        padding:0;
+    }
+    
+    .mainHeader nav ul li{
+        width:100%;
+        text-align:center;
+    }
+    
+    .mainHeader nav a:link, .mainHeader nav a:visited{
+        display:block;
+        padding:10px 20px;
+        height:20px;
+    }
+
+    .mainContent {
+        padding:10px;
+    }
+
+    .footer {
+        width:90%;
+    }
 }
