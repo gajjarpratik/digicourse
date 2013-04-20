@@ -1,6 +1,6 @@
 ﻿h4{
-    width:auto;
-    padding:5px;
+    width:90%;
+    padding:5px 5px 5px 10px;
     color:#FFF;
     background-color:#2F3C40;
      border-radius:3px;
@@ -8,22 +8,93 @@
     -webkit-border-radius:3px;
 }
 
-.left {
-    float: left;
-    width: 35%;
+.main-dashboard {
+    width:100%;
+    margin:0 auto;
 }
 
+.left {
+    float: left;
+    width: 34%;
+}
+
+.right {
+    float:left;
+    width:65%;
+}
 .course-material {
     
 }
 
+.course-material-links{
+    width:90%;
+    margin:0 auto;
+}
+
+.course-material-links a{
+    color:#FFF;
+    font-size:14px;
+    padding:5px;
+    background-color:#66AA33;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+.course-material-links a:hover{
+    background-color:#2F3C40;
+}
+
+.material-title{
+    color:#FFF;
+    font-size:14px;
+    padding:5px 70% 5px 5px;
+    background-color:#66AA33;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+.material-title:hover{
+    background-color:#2F3C40;
+}
+
+.more-link {
+    color:#2F3C40;
+}
+.more-link:hover {
+    text-decoration:underline;
+}
+.more {
+    width:90%;
+    margin:0 auto;
+}
+
+.more a{
+    color:#2F3C40;
+    font-size:14px;
+    padding:5px;
+    background-color:#fff;
+    margin-right:80px;
+}
+
+.more a:hover,a:visited{
+    text-decoration:underline;
+}
+
 .assignments {
+    color:#2F3C40;
+    font-size:14px;
 }
 
 .annoucements {
     float:left;
-    width:60%;
-    margin-left:5%;
+    width:62%;
+    margin-left:4%;
+}
+
+.uploadButton {
+    border-color:#2F3C40;
 }
 
 @media only screen and (min-width:150px) and (max-width:600px) {
@@ -34,11 +105,17 @@
         width: 95%;
     }
 
+    .right {
+        float: none;
+        margin:0 auto;
+        width: 95%;
+    }
     .course-material {
-        
+        width:100%;
     }
     
     .assignments {
+        width:100%;
     }
     
     .annoucements {

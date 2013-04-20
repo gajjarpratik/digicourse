@@ -12,18 +12,18 @@ input:focus,textarea:focus {
     width:250px;
     text-align:center;
     padding:5px;
-    border-style:solid;
+   /* border-style:solid;
     border-radius:3px;
     border-color:#2F3C40;
     -moz-border-radius:3px;
-    -webkit-border-radius:3px;
+    -webkit-border-radius:3px;*/
 }
 
 .loginControl h1{
     margin:5% auto;
     width:100%;
     text-align:center;
-    font-size:20px;
+    font-size:24px;
 }
 
 .loginControl fieldset{

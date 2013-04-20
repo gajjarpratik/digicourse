@@ -12,7 +12,7 @@
 
 a {
     text-decoration:none;
-
+    background-color:none;
 }
 
     a:link, a:visited {
@@ -49,6 +49,7 @@ form {
 
 .logo a{
     border:none;    
+    background-color:#fff;
 }
 
 .image {
@@ -88,8 +89,9 @@ form {
 }
 
 .login-name {
+    font-size:18px;
     float:right;
-    margin:0 15px;
+    margin:5px 15px;
 }
 
 .login-link {

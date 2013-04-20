@@ -9,7 +9,11 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //Stop Caching in IE
+        Response.Cache.SetCacheability(System.Web.HttpCacheability.NoCache);
 
+        // Stop Caching in Firefox
+        Response.Cache.SetNoStore();
     }
 
     //after logout redirect to default

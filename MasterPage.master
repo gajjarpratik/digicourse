@@ -9,9 +9,18 @@
 
     </asp:ContentPlaceHolder>
     
-    <link rel="icon" type="image/gif" href="images/icon.gif">
+    <link rel="icon" type="image/gif" href="images/icon.gif" />
     <link rel="stylesheet" href="stylesheets/master.css" type="text/css" />
     <meta name="viewport" content="width=device-width,initial-scale:1.0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Cache-Control" content="must-revalidate" />
+    <meta http-equiv="Cache-Control" content="post-check=0" />
+    <meta http-equiv="Cache-Control" content="pre-check=0" />
+
+    
 </head>
 <body>
     <div class="container">

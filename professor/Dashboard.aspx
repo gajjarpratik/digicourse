@@ -8,10 +8,14 @@
         <div class="left">
             <div class="course-material">
                 <h4>Course Materials</h4>
-                <br />
-                <br />
-                <br />
-                <br />
+                <div class="course-material-links">
+                    <asp:Panel ID="material_links" runat="server"></asp:Panel>
+                </div>
+                <div class="more">
+                    <br />
+                    <a href="course_material.aspx">More</a>
+                    <a href="course_material.aspx">Upload</a>
+                </div>
             </div>
             <div class="assignments">
                 <h4>Assignments</h4>
