@@ -22,6 +22,18 @@
     float:left;
     width:65%;
 }
+
+.assignments {
+    color:#2F3C40;
+    font-size:14px;
+}
+
+.annoucements {
+    float:left;
+    width:62%;
+    margin-left:4%;
+}
+
 .course-material {
     
 }
@@ -59,6 +71,25 @@
     background-color:#2F3C40;
 }
 
+.assignments-links{
+    width:90%;
+    margin:0 auto;
+}
+
+.assignments-links a{
+    color:#FFF;
+    font-size:14px;
+    padding:5px;
+    background-color:#66AA33;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+}
+
+.assignments-links a:hover{
+    background-color:#2F3C40;
+}
+
 .more-link {
     color:#2F3C40;
 }
@@ -75,22 +106,10 @@
     font-size:14px;
     padding:5px;
     background-color:#fff;
-    margin-right:80px;
 }
 
 .more a:hover,a:visited{
     text-decoration:underline;
-}
-
-.assignments {
-    color:#2F3C40;
-    font-size:14px;
-}
-
-.annoucements {
-    float:left;
-    width:62%;
-    margin-left:4%;
 }
 
 .uploadButton {

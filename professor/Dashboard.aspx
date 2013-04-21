@@ -13,16 +13,18 @@
                 </div>
                 <div class="more">
                     <br />
-                    <a href="course_material.aspx">More</a>
-                    <a href="course_material.aspx">Upload</a>
+                    <a href="course_material.aspx">More/Upload</a>
                 </div>
             </div>
             <div class="assignments">
                 <h4>Assignments</h4>
-                <br />
-                <br />
-                <br />
-                <br />
+                <div class="assignments-links">
+                    <asp:Panel ID="assignments_links" runat="server"></asp:Panel>
+                </div>
+                <div class="more">
+                    <br />
+                    <a href="assignments.aspx">More/Upload</a>
+                </div>
             </div>
         </div>
         <div class="annoucements">

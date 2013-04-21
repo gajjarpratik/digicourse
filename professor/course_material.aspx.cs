@@ -16,8 +16,8 @@ public partial class professor_material_upload : System.Web.UI.Page
         menu.Text = "Dashboard";
 
         menu = (HyperLink)Page.Master.FindControl("HyperLink3");
-        menu.NavigateUrl = "/professor/announcements.aspx";
-        menu.Text = "Announcements";
+        menu.NavigateUrl = "/professor/assignments.aspx";
+        menu.Text = "Assignments";
 
         //Connection String
         string connString = System.Configuration.ConfigurationManager.ConnectionStrings["database"].ConnectionString;
@@ -40,7 +40,7 @@ public partial class professor_material_upload : System.Web.UI.Page
             HyperLink hl = new HyperLink();
             hl.ID = "Hyperlink" + i++;
             hl.Text = reader["name"].ToString();
-            hl.NavigateUrl = "~/professor/getCourseMaterial.ashx?id=" + reader["id"].ToString();
+            hl.NavigateUrl = "~/common/getCourseMaterial.ashx?id=" + reader["id"].ToString();
             hl.CssClass = "material-title";
             links.Controls.Add(hl);
             links.Controls.Add(new LiteralControl("</br>&nbsp;"));
@@ -51,7 +51,7 @@ public partial class professor_material_upload : System.Web.UI.Page
             hl1.ID = reader["id"].ToString();
             hl1.Text = "Delete";
             hl1.CssClass = "more-link";
-            hl1.NavigateUrl = "~/professor/deleteCourseMaterial.aspx?id=" + reader["id"].ToString();
+            hl1.NavigateUrl = "~/common/deleteCourseMaterial.aspx?id=" + reader["id"].ToString();
             links.Controls.Add(hl1);
             links.Controls.Add(new LiteralControl("</br></br>"));
             i++;

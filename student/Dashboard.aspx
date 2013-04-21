@@ -9,21 +9,35 @@
         <div class="left">
             <div class="course-material">
                 <h4>Course Materials</h4>
-                <br />
-                <br />
-                <br />
-                <br />
+                <div class="course-material-links">
+                    <asp:Panel ID="material_links" runat="server"></asp:Panel>
+                </div>
+                <div class="more">
+                    <br />
+                    <a href="course_material.aspx">More/Upload</a>
+                </div>
             </div>
             <div class="assignments">
                 <h4>Assignments</h4>
-                <br />
-                <br />
-                <br />
-                <br />
+                <div class="assignments-links">
+                    <asp:Panel ID="assignments_links" runat="server"></asp:Panel>
+                </div>
+                <div class="more">
+                    <br />
+                    <a href="assignments.aspx">More/Submit</a>
+                </div>
             </div>
         </div>
         <div class="annoucements">
             <h4>Announcements</h4>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
         
     </div>
