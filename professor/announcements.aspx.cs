@@ -17,4 +17,8 @@ public partial class professor_announcements : System.Web.UI.Page
         hl.NavigateUrl = "~/professor/Default.aspx";
         hl.Text = "Dashboard";
     }
+    protected void uploadAnnouncement_Click(object sender, EventArgs e)
+    { 
+
+    }
 }
