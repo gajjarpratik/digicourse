@@ -29,14 +29,11 @@
         </div>
         <div class="annoucements">
             <h4>Announcements</h4>
+            <div class="more">
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+            <a href="announcements.aspx">More</a>
+            <a href="announcements.aspx">Add</a>
+            </div>
         </div>
         
     </div>
