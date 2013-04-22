@@ -9,7 +9,7 @@ public partial class professor_studentAssignments : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        
     }
 
     protected void assignment_select(object sender, EventArgs e)

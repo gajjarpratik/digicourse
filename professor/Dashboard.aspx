@@ -13,7 +13,7 @@
                 </div>
                 <div class="more">
                     <br />
-                    <a href="course_material.aspx">More/Upload</a>
+                    <a href="course_material.aspx">More/Upload New</a>
                 </div>
             </div>
             <div class="assignments">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="more">
                     <br />
-                    <a href="assignments.aspx">More/Upload</a>
+                    <a href="assignments.aspx" style="text-align:right">More/Upload New</a>
                 </div>
             </div>
         </div>
@@ -31,8 +31,7 @@
             <h4>Announcements</h4>
             <div class="more">
             <br />
-            <a href="announcements.aspx">More</a>
-            <a href="announcements.aspx">Add</a>
+            <a href="announcements.aspx">More/New Announcement</a>
             </div>
         </div>
         

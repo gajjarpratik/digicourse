@@ -6,13 +6,8 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <div class="main-dashboard">
-        <div class="left">
-            <h4>Student Assignments</h4>
-            <a href="submitAssignments.aspx" class="more-link" style="font-size:16px;">Submit</a>            
-        </div>
-        
-        <div class="right">
+    <div class="main-dashboard">        
+        <div class="content">
             <h4>Assignments</h4><br />
             <asp:Panel ID="links" runat="server"></asp:Panel>
         </div>       

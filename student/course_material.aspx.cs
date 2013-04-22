@@ -48,7 +48,7 @@ public partial class professor_material_upload : System.Web.UI.Page
 
         }
     }
-    
+    /*
     protected void upload_Click(object sender, EventArgs e)
     {
         string name = fileName.Text;        
@@ -83,5 +83,5 @@ public partial class professor_material_upload : System.Web.UI.Page
         {
             upload_status.Text = "Format Not Supported or File Too Large";
         }
-    }
+    }*/
 }

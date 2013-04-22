@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Web.Security;
 
 public partial class student_Default : System.Web.UI.Page
 {
@@ -15,7 +16,7 @@ public partial class student_Default : System.Web.UI.Page
         menu.Text = "Dashboard";
 
         menu = (HyperLink)Page.Master.FindControl("HyperLink3");
-        menu.NavigateUrl = "/student/assignments.aspx";
+        menu.NavigateUrl = "~/student/assignments.aspx";
         menu.Text = "Assignments";
 
         //Connection String
@@ -64,7 +65,33 @@ public partial class student_Default : System.Web.UI.Page
             hl.Text = reader1["name"].ToString();
             hl.NavigateUrl = "~/common/getAssignments.ashx?id=" + reader1["id"].ToString();
             assignments_links.Controls.Add(hl);
-            assignments_links.Controls.Add(new LiteralControl("<br/>Due Date:&nbsp;&nbsp;" + reader1["due_date"].ToString() + "<br/><br/>"));
+            assignments_links.Controls.Add(new LiteralControl("<br/>Due Date:&nbsp;&nbsp;" + reader1["due_date"].ToString() + "<br/>"));
+
+
+
+            //Connection String
+            string connString2 = System.Configuration.ConfigurationManager.ConnectionStrings["database"].ConnectionString;
+            string query2 = "SELECT dateOfSubmission FROM studentAssignments WHERE userid=@userid and id=@id";
+
+            SqlConnection conn2 = new SqlConnection(connString);
+            conn2.Open();
+
+            SqlCommand cmd2 = new SqlCommand();
+            cmd2.Connection = conn2;
+            cmd2.CommandText = query2;
+
+            cmd2.Parameters.AddWithValue("@userid", Membership.GetUser().ProviderUserKey);
+            cmd2.Parameters.AddWithValue("@id", reader1["id"].ToString());
+
+            var reader2 = cmd2.ExecuteReader();
+
+            while (reader2.Read())
+            {
+                //Submitted or not ?
+                assignments_links.Controls.Add(new LiteralControl("Submitted On : " + reader2["dateOfSubmission"] + "<br/><br/>"));
+                i++;
+            }
+            conn2.Close();
         }
         conn.Close();
     }

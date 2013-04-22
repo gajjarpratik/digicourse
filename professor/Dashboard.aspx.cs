@@ -10,14 +10,6 @@ public partial class professor_Dashboard : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        HyperLink menu = (HyperLink)Page.Master.FindControl("HyperLink1");
-        menu.NavigateUrl = "/professor/Dashboard.aspx";
-        menu.Text = "Dashboard";
-
-        menu = (HyperLink)Page.Master.FindControl("HyperLink3");
-        menu.NavigateUrl = "/professor/assignments.aspx";
-        menu.Text = "Assignments";
-
          //Connection String
         string connString = System.Configuration.ConfigurationManager.ConnectionStrings["database"].ConnectionString;
         string query = "SELECT TOP 4 * FROM Course_Material ORDER BY date DESC";

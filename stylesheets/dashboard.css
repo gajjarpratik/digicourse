@@ -1,5 +1,5 @@
 ﻿h4{
-    width:90%;
+    width:95%;
     padding:5px 5px 5px 10px;
     color:#FFF;
     background-color:#2F3C40;
@@ -21,6 +21,7 @@
 .right {
     float:left;
     width:65%;
+    margin-left:1%;
 }
 
 .assignments {
@@ -91,14 +92,20 @@
 }
 
 .more-link {
-    color:#2F3C40;
+    color:#FFF;
+    background-color:#2F3C40;    
+    font-size:14px;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
 }
 .more-link:hover {
-    text-decoration:underline;
+    background-color:#66AA33;
 }
 .more {
     width:90%;
     margin:0 auto;
+    text-align:right;
 }
 
 .more a{
@@ -114,6 +121,11 @@
 
 .uploadButton {
     border-color:#2F3C40;
+}
+
+.content {
+    width:100%;
+    margin:0 auto;
 }
 
 @media only screen and (min-width:150px) and (max-width:600px) {

@@ -14,7 +14,7 @@
                 </div>
                 <div class="more">
                     <br />
-                    <a href="course_material.aspx">More/Upload</a>
+                    <a href="course_material.aspx">More</a>
                 </div>
             </div>
             <div class="assignments">

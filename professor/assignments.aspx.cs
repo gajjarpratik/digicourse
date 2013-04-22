@@ -10,14 +10,6 @@ public partial class professor_assignments : System.Web.UI.Page
 {
     protected void Page_Load(Object sender, EventArgs e)
     {
-        //Change MenuBar Links
-        HyperLink menu = (HyperLink)Page.Master.FindControl("HyperLink1");
-        menu.NavigateUrl = "/professor/Dashboard.aspx";
-        menu.Text = "Dashboard";
-
-        menu = (HyperLink)Page.Master.FindControl("HyperLink3");
-        menu.NavigateUrl = "/professor/assignments.aspx";
-        menu.Text = "Assignments";
 
         //Connection String
         string connString = System.Configuration.ConfigurationManager.ConnectionStrings["database"].ConnectionString;
@@ -43,7 +35,7 @@ public partial class professor_assignments : System.Web.UI.Page
             hl.NavigateUrl = "~/common/getAssignments.ashx?id=" + reader["id"].ToString();
             hl.CssClass = "material-title";
             links.Controls.Add(hl);
-            links.Controls.Add(new LiteralControl("</br>&nbsp;"));
+            links.Controls.Add(new LiteralControl("</br><br/>&nbsp;"));
             links.Controls.Add(new LiteralControl("Due Date: &nbsp;&nbsp;" + reader["due_date"].ToString() + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"));
 
             //Delete
@@ -57,6 +49,7 @@ public partial class professor_assignments : System.Web.UI.Page
             i++;
         }
         conn.Close();
+
     }
 
     protected void upload_Click(object sender, EventArgs e)
