@@ -51,6 +51,7 @@ public partial class _Default : System.Web.UI.Page
                 cmd.ExecuteNonQuery();
             }
         }
+        Label3.Text = "Attendance Taken Successfully";
         
     }
 }

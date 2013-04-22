@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div style="height: 133px">
     
-        <asp:Label ID="Label1" runat="server" Text="Search By Student ID"></asp:Label>
+        &nbsp;<asp:Label ID="Label1" runat="server" Text="Search By Student ID"></asp:Label>
         <br />
     
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
@@ -24,7 +24,9 @@
         <br />
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Search" />
     
-    </div>
+        <br />
+        <br />
+        <a href="TakeAttendance.aspx">Back</a></div>
     </form>
 </body>
 </html>

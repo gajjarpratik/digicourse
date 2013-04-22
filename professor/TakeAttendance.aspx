@@ -16,10 +16,17 @@
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:database %>" SelectCommand="SELECT [Student_ID], [Student_Name] FROM [Student]"></asp:SqlDataSource>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Go" />
         <br />
-        <asp:Label ID="Label1" runat="server"></asp:Label>
+        <div>
+        <asp:Label ID="Label1" runat="server" BorderColor="#3333CC" Height="100px" style="text-align: right" Width="100px"></asp:Label>
+            </div>
         <br />
         <asp:Label ID="Label2" runat="server" Visible="False"></asp:Label>
         <br />
+        <asp:Label ID="Label3" runat="server"></asp:Label>
+        <br />
+        <br />
+        <br />
+        <a href="ShowAttendance.aspx">Check For Attendance</a><br />
     </form>
 </body>
 </html>
