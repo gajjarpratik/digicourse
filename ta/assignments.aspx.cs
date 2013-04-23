@@ -34,6 +34,7 @@ public partial class professor_assignments : System.Web.UI.Page
             hl.Text = reader["name"].ToString();
             hl.NavigateUrl = "~/common/getAssignments.ashx?id=" + reader["id"].ToString();
             hl.CssClass = "material-title";
+            hl.Target = "_blank";
             links.Controls.Add(hl);
             links.Controls.Add(new LiteralControl("</br><br/>&nbsp;"));
             links.Controls.Add(new LiteralControl("Due Date: &nbsp;&nbsp;" + reader["due_date"].ToString() + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"));
@@ -43,6 +44,7 @@ public partial class professor_assignments : System.Web.UI.Page
             hl1.ID = reader["id"].ToString();
             hl1.Text = "Delete";
             hl1.CssClass = "more-link";
+            hl1.Visible = false;
             hl1.NavigateUrl = "~/common/deleteAssignments.aspx?id=" + reader["id"].ToString();
             links.Controls.Add(hl1);
             links.Controls.Add(new LiteralControl("</br></br>"));

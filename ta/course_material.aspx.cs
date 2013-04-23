@@ -33,6 +33,7 @@ public partial class professor_material_upload : System.Web.UI.Page
             hl.Text = reader["name"].ToString();
             hl.NavigateUrl = "~/common/getCourseMaterial.ashx?id=" + reader["id"].ToString();
             hl.CssClass = "material-title";
+            hl.Target = "_blank";
             links.Controls.Add(hl);
             links.Controls.Add(new LiteralControl("</br><br/>&nbsp;"));
             links.Controls.Add(new LiteralControl(reader["date"].ToString() + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"));

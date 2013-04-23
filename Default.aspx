@@ -8,6 +8,7 @@
     <div>
         <h1>EC512 - Enterprise Client/Server Software</h1>
         <p>
+            Boston University
         </p>
     </div>        
 </asp:Content>

@@ -41,6 +41,7 @@ public partial class professor_material_upload : System.Web.UI.Page
             hl.ID = "Hyperlink" + i++;
             hl.Text = reader["name"].ToString();
             hl.NavigateUrl = "~/common/getCourseMaterial.ashx?id=" + reader["id"].ToString();
+            hl.Target = "_blank";
             hl.CssClass = "material-title";
             links.Controls.Add(hl);
             links.Controls.Add(new LiteralControl("</br>&nbsp;"));

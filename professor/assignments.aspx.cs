@@ -34,6 +34,7 @@ public partial class professor_assignments : System.Web.UI.Page
             hl.Text = reader["name"].ToString();
             hl.NavigateUrl = "~/common/getAssignments.ashx?id=" + reader["id"].ToString();
             hl.CssClass = "material-title";
+            hl.Target = "_blank";
             links.Controls.Add(hl);
             links.Controls.Add(new LiteralControl("</br><br/>&nbsp;"));
             links.Controls.Add(new LiteralControl("Due Date: &nbsp;&nbsp;" + reader["due_date"].ToString() + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"));

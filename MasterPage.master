@@ -28,7 +28,7 @@
         
         <div class="header">
             <div class="logo">
-                <a href="Default.aspx"><asp:Image ID="Image1" CssClass="image" ImageUrl="~/images/logo.gif" runat="server" /></a>
+                <asp:Image ID="Image1" CssClass="image" ImageUrl="~/images/logo.gif" runat="server" />
             </div>
             <div class="login-status">
                 <div class="login-status-position">
@@ -58,9 +58,9 @@
         <nav>
             <ul>
                 <li><asp:HyperLink ID="HyperLink1" NavigateUrl="Default.aspx" runat="server" Text="Home"></asp:HyperLink></li>
-                <li><asp:HyperLink ID="HyperLink2" NavigateUrl="Default.aspx" runat="server" Text="Course Description"></asp:HyperLink></li>
-                <li><asp:HyperLink ID="HyperLink3" NavigateUrl="Default.aspx" runat="server" Text="Professor Bio"></asp:HyperLink></li>
-                <li><asp:HyperLink ID="HyperLink4" NavigateUrl="Default.aspx" runat="server" Text="About Us"></asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink2" NavigateUrl="courseDescription.aspx" runat="server" Text="Course Description"></asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink3" NavigateUrl="professorBio.aspx" runat="server" Text="Professor Bio"></asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink4" NavigateUrl="about.aspx" runat="server" Text="About Us"></asp:HyperLink></li>
                 <li><asp:HyperLink ID="HyperLink5" runat="server"></asp:HyperLink></li>
             </ul>
         </nav>       

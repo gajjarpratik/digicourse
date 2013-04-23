@@ -70,7 +70,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 menu.Text = "Dashboard";
 
                 menu = (HyperLink)Page.Master.FindControl("HyperLink2");
-                menu.NavigateUrl = "~/ta/grading.aspx";
+                menu.NavigateUrl = "~/ta/studentAssignments.aspx";
                 menu.Text = "Grading";
 
                 menu = (HyperLink)Page.Master.FindControl("HyperLink3");

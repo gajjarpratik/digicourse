@@ -41,6 +41,7 @@ public partial class student_Default : System.Web.UI.Page
             hl.ID = "Hyperlink" + i++;
             hl.Text = reader["name"].ToString();
             hl.NavigateUrl = "~/common/getCourseMaterial.ashx?id=" + reader["id"].ToString();
+            hl.Target = "_blank";
             material_links.Controls.Add(hl);
             material_links.Controls.Add(new LiteralControl("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + reader["date"].ToString() + "<br/><br/>"));
         }
@@ -64,6 +65,7 @@ public partial class student_Default : System.Web.UI.Page
             hl.ID = "Hyperlink" + i++;
             hl.Text = reader1["name"].ToString();
             hl.NavigateUrl = "~/common/getAssignments.ashx?id=" + reader1["id"].ToString();
+            hl.Target = "_blank";
             assignments_links.Controls.Add(hl);
             assignments_links.Controls.Add(new LiteralControl("<br/>Due Date:&nbsp;&nbsp;" + reader1["due_date"].ToString() + "<br/>"));
 
