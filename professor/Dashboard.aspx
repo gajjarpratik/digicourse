@@ -29,6 +29,7 @@
         </div>
         <div class="annoucements">
             <h4>Announcements</h4>
+            <asp:Panel ID="Announcements" runat="server" Height="109px"></asp:Panel>
             <div class="more">
             <br />
             <a href="announcements.aspx">More/New Announcement</a>
