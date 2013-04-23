@@ -5,28 +5,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        #form1 {
+            height: 751px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div style="height: 133px">
+    <div style="height: 543px">
     
-        &nbsp;<asp:Label ID="Label1" runat="server" Text="Search By Student ID"></asp:Label>
-        <br />
-    
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <br />
-        <asp:Button ID="Button1" runat="server" Text="Search" OnClick="Button1_Click" />
-    
-        <br />
-        <asp:Label ID="Label2" runat="server" Text="Search By Date"></asp:Label>
-        <br />
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-        <br />
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Search" />
+        <asp:ListBox ID="ListBox1" runat="server" AutoPostBack="True" DataTextField="name" DataValueField="userid" Font-Size="Medium" Height="97%" Width="329px"></asp:ListBox>
+        <asp:Label ID="Label1" runat="server"></asp:Label>
     
         <br />
         <br />
         <a href="attendance.aspx">Back</a></div>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:database %>" SelectCommand="SELECT * FROM [Attendance]"></asp:SqlDataSource>
     </form>
+    <p>
+        &nbsp;</p>
 </body>
 </html>
