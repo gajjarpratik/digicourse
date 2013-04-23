@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Net;
+using System.Net.Mail;
+using System.Net.NetworkInformation;
 
 public partial class professor_material_upload : System.Web.UI.Page
 {
@@ -70,6 +73,7 @@ public partial class professor_material_upload : System.Web.UI.Page
             cmd.Connection = conn;
             cmd.CommandText = query;
             cmd.Parameters.AddWithValue("@name", name);
+            string a = name; //Email
             cmd.Parameters.AddWithValue("@extension", fileExt);
             cmd.Parameters.AddWithValue("@file", fileData);
             cmd.Parameters.AddWithValue("@date", DateTime.Now.ToString());
@@ -80,10 +84,43 @@ public partial class professor_material_upload : System.Web.UI.Page
 
             upload_status.Text = "Material Uploaded Successfully";
             conn.Close();
+            string msg = "New Material uploaded";
+            string b;
+            SqlCommand cmd1 = new SqlCommand("SELECT * from Login_Info", conn);
+            conn.Open();
+            SqlDataReader rdr1 = cmd1.ExecuteReader();
+            string student_email;
+            while (rdr1.Read())
+            {
+                student_email = (string)rdr1["Email"];
+                Send_Mail(student_email, a);
+            }
+
+            // setup mail message
+
+
+            conn.Close();
        }
         else
         {
             upload_status.Text = "Format Not Supported or File Too Large";
         }
+    }
+    protected void Send_Mail(string student_email, string msg)
+    {
+        MailMessage message = new MailMessage();
+        message.From = new MailAddress("digicourse512@gmail.com");
+        message.To.Add(new MailAddress(student_email));
+        message.Subject = "Course Material Uploaded";
+        message.Body = "New course material uploaded: " + msg;
+
+        // setup mail client
+        SmtpClient mailClient = new SmtpClient("smtp.gmail.com", 587);
+        mailClient.Credentials = new NetworkCredential("digicourse512@gmail.com", "BostonUniversity");
+        mailClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+        mailClient.EnableSsl = true;
+
+        // send message
+        mailClient.Send(message);
     }
 }
