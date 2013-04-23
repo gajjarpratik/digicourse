@@ -11,11 +11,7 @@
         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="name" DataValueField="id" OnSelectedIndexChanged="assignment_select"></asp:DropDownList>
     </div>
     <div class="right">
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <ContentTemplate>
-
-            </ContentTemplate>
-        </asp:UpdatePanel>
+        <asp:Panel ID="assignments" runat="server"></asp:Panel>
     </div>
     
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:database %>" SelectCommand="SELECT [name], [id] FROM [Assignments]"></asp:SqlDataSource>
