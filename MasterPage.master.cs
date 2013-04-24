@@ -61,6 +61,11 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 menu = (HyperLink)Page.Master.FindControl("HyperLink5");
                 menu.NavigateUrl = "~/professor/attendance.aspx";
                 menu.Text = "Attendance";
+
+                menu = (HyperLink)Page.Master.FindControl("HyperLink6");
+                menu.NavigateUrl = "~/professor/other.aspx";
+                menu.Text = "Other";
+
             }
             else if (Roles.IsUserInRole(name, "ta"))
             {

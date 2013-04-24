@@ -62,6 +62,7 @@
                 <li><asp:HyperLink ID="HyperLink3" NavigateUrl="professorBio.aspx" runat="server" Text="Professor Bio"></asp:HyperLink></li>
                 <li><asp:HyperLink ID="HyperLink4" NavigateUrl="about.aspx" runat="server" Text="About Us"></asp:HyperLink></li>
                 <li><asp:HyperLink ID="HyperLink5" runat="server"></asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink6" runat="server"></asp:HyperLink></li>
             </ul>
         </nav>       
     </header>

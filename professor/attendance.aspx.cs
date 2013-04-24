@@ -6,89 +6,76 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Web.Security;
+using System.Collections;
 
 public partial class _Default : System.Web.UI.Page
 {
-    private const string connString = @"Data Source = (LocalDB)\v11.0;AttachDbFilename=|DataDirectory|aspnetdb.mdf;Integrated Security =True";
+    private const string connString2 = @"Data Source = (LocalDB)\v11.0;AttachDbFilename=|DataDirectory|Database.mdf;Integrated Security =True";
+
+    protected void Page_Init(object sender, EventArgs e) {
+            var list = Roles.GetUsersInRole("student");
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("name", typeof(string));
+
+            foreach (string name in list)
+            {
+                DataRow dr = dt.NewRow();
+                dr["name"] = name;
+                dt.Rows.Add(dr);
+            }
+            this.CheckBoxList1.DataSource = dt;
+
+            this.CheckBoxList1.DataTextField = "name";
+            this.CheckBoxList1.DataValueField = "name";
+            this.CheckBoxList1.DataBind();
+        
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
-        Label1.Text = DateTime.Now.ToShortDateString().ToString();
-        SqlConnection conn = new SqlConnection(connString);
-        conn.Open();
-        //string asdf = TextBox1.Text;
+        time.Text = DateTime.Now.ToShortDateString().ToString();
 
-        string query = "SELECT UserId,UserName FROM aspnet_Users WHERE UserId IN(SELECT UserId FROM aspnet_UsersInRoles WHERE RoleId IN(SELECT RoleId FROM aspnet_Roles WHERE RoleName='student'));";
-
-        SqlCommand cmd = new SqlCommand();
-        //cmd.Parameters.AddWithValue("@asdf", asdf);
-        cmd.Connection = conn;
-        cmd.CommandText = query;
-        //SqlCommand cmd = new SqlCommand("SELECT studentname,time,pa FROM Table2 WHERE studentname=@asdf", conn);
-        SqlDataReader rdr = cmd.ExecuteReader();
-
-        //string query2 = "SELECT Student_Name FROM Student WHERE Student.Student_ID=@asdf";
-        //SqlCommand cmd2 = new SqlCommand();
-        //cmd2.Parameters.AddWithValue("@asdf",asdf);
-        //cmd2.Connection = conn;
-        //cmd2.CommandText = query2;
-        //SqlDataReader rdr2 = cmd2.ExecuteReader();
-        //CheckBoxList1.DataTextField = (string)rdr["UserName"];
-        DataTable dt = new DataTable();
-        dt.Columns.Add("");
-        while (rdr.Read())
-        {
-            //for (int i = 0; i < CheckBoxList1.Items.Count; i++)
-            //{
-            
-            
-            
-            //}
-            //string s = (string)rdr["UserName"];
-            //Response.Write(s);
-        }
- 
-        conn.Close();
     }
 
     
-    protected void Button1_Click(object sender, EventArgs e)
+    protected void saveAttendance(object sender, EventArgs e)
     {
         for (int i = 0; i < CheckBoxList1.Items.Count; i++)
         {
             if (CheckBoxList1.Items[i].Selected)
             {
-                
-                Label2.Text = "p";
-                SqlConnection conn = new SqlConnection(connString);
+                SqlConnection conn = new SqlConnection(connString2);
                 conn.Open();
-                string query = "INSERT INTO Attendance(time, pa, Student_ID) VALUES ( @time, @pa,@Student_ID)";
+                string query = "INSERT INTO Attendance( name, date, present_absent, userid) VALUES ( @name, @date, @present_absent, @userid)";
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.AddWithValue("@time",Label1.Text);
-                cmd.Parameters.AddWithValue("@pa",Label2.Text);
-                cmd.Parameters.AddWithValue("@Student_ID", CheckBoxList1.Items[i].Value);
+                cmd.Parameters.AddWithValue("@name", CheckBoxList1.Items[i].Text);
+                cmd.Parameters.AddWithValue("@date",time.Text);
+                cmd.Parameters.AddWithValue("@present_absent","p");
+                cmd.Parameters.AddWithValue("@userid", CheckBoxList1.Items[i].Value);
                 cmd.Connection = conn;
                 cmd.CommandText = query;
                 cmd.ExecuteNonQuery();
-                //System.Diagnostics.Debug.WriteLine(CheckBoxList1.Items[i].Value);
-                
+                conn.Close();
             } 
             
             else if (!CheckBoxList1.Items[i].Selected)
             {
-                Label2.Text = "a";
-                SqlConnection conn = new SqlConnection(connString);
+                SqlConnection conn = new SqlConnection(connString2);
                 conn.Open();
-                string query = "INSERT INTO Attendance(time, pa, Student_ID) VALUES ( @time, @pa,@Student_ID)";
+                string query = "INSERT INTO Attendance( name, date, present_absent, userid) VALUES ( @name, @date, @present_absent, @userid)";
                 SqlCommand cmd = new SqlCommand();
-                cmd.Parameters.AddWithValue("@time", Label1.Text);
-                cmd.Parameters.AddWithValue("@pa", Label2.Text);
-                cmd.Parameters.AddWithValue("@Student_ID", CheckBoxList1.Items[i].Value);
+                cmd.Parameters.AddWithValue("@name", CheckBoxList1.Items[i].Text);
+                cmd.Parameters.AddWithValue("@date", time.Text);
+                cmd.Parameters.AddWithValue("@present_absent","a");
+                cmd.Parameters.AddWithValue("@userid", CheckBoxList1.Items[i].Value);
                 cmd.Connection = conn;
                 cmd.CommandText = query;
                 cmd.ExecuteNonQuery();
+                conn.Close();
             }
         }
-        Label3.Text = "Attendance Taken Successfully";
+        success.Text = "Attendance Taken Successfully";
         
     }
 }

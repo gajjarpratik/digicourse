@@ -29,28 +29,14 @@
         </div>
         <div class="annoucements">
             <h4>Announcements</h4>
-            <asp:Panel ID="Announcements" runat="server" Height="109px"></asp:Panel>
+            <asp:Panel ID="Announcements" runat="server"></asp:Panel>
             <div class="more">
             <br />
-            <a href="announcements.aspx">More/New Announcement</a>
+            <a href="announcements.aspx">More/Make New Announcement</a>
             </div>
-         </div>
-        <div class =" left">
-                         <div class="course-material-links">
-                    <asp:Panel ID="Add_New_Student" runat="server"></asp:Panel>
-                 
             
-            <h4>Add new Students</h4>
-            
-                    <div class="more">
-                    <br />
-                    <a href="add_students.aspx">More/New Student</a>
-                    </div>
-                             </div>
-                 
-        </div>
         </div>
         
-    
+    </div>
     
 </asp:Content>

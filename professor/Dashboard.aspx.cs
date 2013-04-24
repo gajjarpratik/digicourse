@@ -73,24 +73,14 @@ public partial class professor_Dashboard : System.Web.UI.Page
         
         while (reader2.Read())
         {
-
-            //File Link
-
-            //HyperLink hl = new HyperLink();
-
-            //hl.ID = "Hyperlink" + i++;
-
-            //hl.Text = reader2["announcement"].ToString();
-
-            //hl.NavigateUrl = "~/professor/announcements.aspx";
-
-            //Announcements.Controls.Add(hl);
             string date = reader2["date"].ToString();
-            Announcements.Controls.Add(new LiteralControl("<br/>" + reader2["announcement"].ToString() + "<br/>"));
-            Announcements.Controls.Add(new LiteralControl("<br/>Date:&nbsp;&nbsp;" + date.Substring(0,9) + "&nbsp;&nbsp;" + reader2["time"].ToString() + "<br/><br/>" + "<hr>"));
+            Announcements.Controls.Add(new LiteralControl("<br/><b>" + reader2["announcement"].ToString() + "</b><br/>"));
+            Announcements.Controls.Add(new LiteralControl("<br/>Date:&nbsp;&nbsp;" + date.Substring(0,9) + "&nbsp;&nbsp;" + reader2["time"].ToString() + "<br/><br/>"));
 
         }
-
+        reader.Close();
+        reader1.Close();
+        reader2.Close();
         conn.Close();
     }
 

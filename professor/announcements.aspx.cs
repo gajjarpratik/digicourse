@@ -8,14 +8,31 @@ using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
 using System.Net.NetworkInformation;
-using System.Web.Security;
 
 public partial class professor_announcements : System.Web.UI.Page
 {
     string connString = System.Configuration.ConfigurationManager.ConnectionStrings["database"].ConnectionString;
     protected void Page_Load(object sender, EventArgs e)
     {
-                        
+        //Connection String
+        string connString = System.Configuration.ConfigurationManager.ConnectionStrings["database"].ConnectionString;
+        SqlConnection conn = new SqlConnection(connString);
+        string query = "SELECT * FROM Announcement ORDER BY date DESC, Time DESC";
+        SqlCommand cmd2 = new SqlCommand();
+        cmd2.Connection = conn;
+        cmd2.CommandText = query;
+
+        conn.Open();
+
+        var reader2 = cmd2.ExecuteReader();
+
+        while (reader2.Read())
+        {
+            string date = reader2["date"].ToString();
+            Announcements.Controls.Add(new LiteralControl("<br/><b>" + reader2["announcement"].ToString() + "</b><br/>"));
+            Announcements.Controls.Add(new LiteralControl("<br/>Date:&nbsp;&nbsp;" + date.Substring(0, 9) + "&nbsp;&nbsp;" + reader2["time"].ToString() + "<br/><br/>"));
+
+        }
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
@@ -26,22 +43,22 @@ public partial class professor_announcements : System.Web.UI.Page
         SqlCommand cmd = new SqlCommand("insert into Announcement (Announcement, date, time)" + "values (@a, CONVERT(VARCHAR(8),GETDATE(),101), convert(varchar(5),getdate(),8))", conn);
         cmd.Parameters.AddWithValue("@a", a);
         SqlDataReader rdr = cmd.ExecuteReader();
-        rdr.Close();
         conn.Close();
-        
-        List<String> usernames = Roles.GetUsersInRole("student").ToList();
-        string emails;
-        if (usernames.Count != 0)
+        SqlCommand cmd1 = new SqlCommand("SELECT * from Login_Info", conn);
+        conn.Open();
+        SqlDataReader rdr1 = cmd1.ExecuteReader();
+        string student_email;
+        while (rdr1.Read())
         {
-            foreach (string k in usernames)
-            {
-                emails = Membership.GetUser(k).Email;
-                Send_Mail(emails, a);
-            }
+            student_email = (string)rdr1["Email"];
+            Send_Mail(student_email, a);
         }
-                        
+
         // setup mail message
-                
+
+        conn.Close();
+        success.Text = "Announcement Posted Successfully";
+        Response.Redirect(Request.RawUrl, true);
     }
    protected void Send_Mail(string student_email, string msg)
     {
@@ -60,9 +77,9 @@ public partial class professor_announcements : System.Web.UI.Page
         // send message
         mailClient.Send(message);
     }
-
+    /*
     protected void Button2_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/professor/Dashboard.aspx");
-    }
+    }*/
 }
