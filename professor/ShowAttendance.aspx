@@ -1,29 +1,21 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ShowAttendance.aspx.cs" Inherits="ShowAttendance" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ShowAttendance.aspx.cs" Inherits="ShowAttendance" MasterPageFile="~/MasterPage.master"%>
 
-<!DOCTYPE html>
+<asp:Content ContentPlaceHolderID="head" runat="server">
+    <title>DigiCourse | View Attendance</title>
+    <link rel="stylesheet" href="../stylesheets/dashboard.css" type="text/css" />
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <style type="text/css">
-        #form1 {
-            height: 751px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div style="height: 543px">
-    
-        <asp:ListBox ID="ListBox1" runat="server" AutoPostBack="True" DataTextField="name" DataValueField="userid" Font-Size="Medium" Height="97%" Width="329px"></asp:ListBox>
-        <asp:Label ID="Label1" runat="server"></asp:Label>
+<asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <div class="left">
+        <h4>Select Student</h4>
+        <asp:ListBox ID="ListBox1" runat="server" AutoPostBack="True" DataTextField="name" DataValueField="userid" Font-Size="Medium" Height="100%" Width="280" ></asp:ListBox>
+    </div>
+
+    <div class="right">
+        <h4>Attendance Record</h4>
+        <asp:Panel ID="attendance" runat="server"></asp:Panel>
+    </div>
     
         <br />
-        <br />
-        <a href="attendance.aspx">Back</a></div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:database %>" SelectCommand="SELECT * FROM [Attendance]"></asp:SqlDataSource>
-    </form>
-    <p>
-        &nbsp;</p>
-</body>
-</html>
+</asp:Content>

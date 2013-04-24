@@ -12,10 +12,13 @@
             <a href="studentAssignments.aspx" class="more-link" style="font-size:16px;">Give Grades</a>
             <h4>Upload New Assignments</h4>
             Assignment Title:<br />
-            <asp:TextBox ID="fileName" runat="server" CssClass="uploadButton" ToolTip="Title" EnableTheming="True"></asp:TextBox><br /><br />
+            <asp:TextBox ID="fileName" runat="server" CssClass="uploadButton" ToolTip="Title" EnableTheming="True"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="fileName" runat="server" ErrorMessage="Title Required"></asp:RequiredFieldValidator><br /><br />
             Due Date:
-            <asp:Calendar ID="due_date" runat="server"></asp:Calendar>
-            <asp:FileUpload ID="file" CssClass="uploadButton" runat="server" /><br /><br />
+            <asp:Calendar ID="due_date" OnSelectionChanged="checkDueDate" runat="server"></asp:Calendar> 
+            <asp:Label ID="Label1" runat="server" Text="" ForeColor="#66AA33" Font-Size="X-Large"></asp:Label><br /><br />
+            <asp:FileUpload ID="file" CssClass="uploadButton" runat="server" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="file" ErrorMessage="Select File to Upload"></asp:RequiredFieldValidator><br /><br />
             <asp:Button ID="upload" runat="server" Text="Upload" CssClass="uploadButton" OnClick="upload_Click" />
             <asp:Label ID="upload_status" runat="server" Text=""></asp:Label><br /><br />
         </div>

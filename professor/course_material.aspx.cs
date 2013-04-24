@@ -46,7 +46,7 @@ public partial class professor_material_upload : System.Web.UI.Page
             hl1.ID = reader["id"].ToString();
             hl1.Text = "Delete";
             hl1.CssClass = "more-link";
-            hl1.NavigateUrl = "~/common/deleteCourseMaterial.aspx?id=" + reader["id"].ToString();
+            hl1.NavigateUrl = "~/professor/deleteCourseMaterial.aspx?id=" + reader["id"].ToString();
             hl.Target = "_blank";
             links.Controls.Add(hl1);
             links.Controls.Add(new LiteralControl("</br></br>"));
@@ -84,7 +84,7 @@ public partial class professor_material_upload : System.Web.UI.Page
 
             upload_status.Text = "Material Uploaded Successfully";
             conn.Close();
-            string msg = "New Material uploaded";
+            string msg = name;
             string b;
             SqlCommand cmd1 = new SqlCommand("SELECT * from Login_Info", conn);
             conn.Open();
@@ -97,9 +97,9 @@ public partial class professor_material_upload : System.Web.UI.Page
             }
 
             // setup mail message
-
-
             conn.Close();
+
+            Response.Redirect(Request.RawUrl, true);
        }
         else
         {

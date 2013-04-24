@@ -14,7 +14,25 @@ public partial class professor_announcements : System.Web.UI.Page
     string connString = System.Configuration.ConfigurationManager.ConnectionStrings["database"].ConnectionString;
     protected void Page_Load(object sender, EventArgs e)
     {
+        //Connection String
+        string connString = System.Configuration.ConfigurationManager.ConnectionStrings["database"].ConnectionString;
+        SqlConnection conn = new SqlConnection(connString);
+        string query = "SELECT * FROM Announcement ORDER BY date DESC, Time DESC";
+        SqlCommand cmd2 = new SqlCommand();
+        cmd2.Connection = conn;
+        cmd2.CommandText = query;
 
+        conn.Open();
+
+        var reader2 = cmd2.ExecuteReader();
+
+        while (reader2.Read())
+        {
+            string date = reader2["date"].ToString();
+            Announcements.Controls.Add(new LiteralControl("<br/><b>" + reader2["announcement"].ToString() + "</b><br/>"));
+            Announcements.Controls.Add(new LiteralControl("<br/>Date:&nbsp;&nbsp;" + date.Substring(0, 9) + "&nbsp;&nbsp;" + reader2["time"].ToString() + "<br/><br/>"));
+
+        }
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
@@ -23,7 +41,7 @@ public partial class professor_announcements : System.Web.UI.Page
         string a;
         a = NewAnnouncementText.Text;
         SqlCommand cmd = new SqlCommand("insert into Announcement (Announcement, date, time)" + "values (@a, CONVERT(VARCHAR(8),GETDATE(),101), convert(varchar(5),getdate(),8))", conn);
-        cmd.Parameters.Add("@a", a);
+        cmd.Parameters.AddWithValue("@a", a);
         SqlDataReader rdr = cmd.ExecuteReader();
         conn.Close();
         SqlCommand cmd1 = new SqlCommand("SELECT * from Login_Info", conn);
@@ -38,8 +56,9 @@ public partial class professor_announcements : System.Web.UI.Page
 
         // setup mail message
 
-
         conn.Close();
+        success.Text = "Announcement Posted Successfully";
+        Response.Redirect(Request.RawUrl, true);
     }
    protected void Send_Mail(string student_email, string msg)
     {
@@ -58,9 +77,9 @@ public partial class professor_announcements : System.Web.UI.Page
         // send message
         mailClient.Send(message);
     }
-
+    /*
     protected void Button2_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/professor/Dashboard.aspx");
-    }
+    }*/
 }

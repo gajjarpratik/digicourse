@@ -1,31 +1,23 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="attendance.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="attendance.aspx.cs" Inherits="_Default" MasterPageFile="~/MasterPage.master" %>
 
-<!DOCTYPE html>
+<asp:Content ContentPlaceHolderID="head" runat="server">
+    <title>DigiCourse | Assignments</title>
+    <link rel="stylesheet" href="../stylesheets/dashboard.css" type="text/css" />
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
+<asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <div class="main-dashboard">
+        <div class="left">
+            <br /><a href="ShowAttendance.aspx" class="more-link">Check For Attendance</a>
+        </div>
+        <div class="right">
+            <h4>Take Attendance</h4>
+            <b>Attendance for: <br /><asp:Label ID="time" runat="server" BorderColor="#3333CC"></asp:Label></b>            
+            <br /><br />
+            <asp:CheckBoxList ID="CheckBoxList1" runat="server"></asp:CheckBoxList>
+            <asp:Button ID="Button1" runat="server" OnClick="saveAttendance" Text="Save" />
+            <br />
+            <asp:Label ID="success" runat="server"></asp:Label>           
+        </div>
     </div>
-        <asp:CheckBoxList ID="CheckBoxList1" runat="server">
-        </asp:CheckBoxList>
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Go" />
-        <br />
-        <div>
-        <asp:Label ID="Label1" runat="server" BorderColor="#3333CC" Height="100px" style="text-align: right" Width="100px"></asp:Label>
-            </div>
-        <br />
-        <asp:Label ID="Label2" runat="server" Visible="False"></asp:Label>
-        <br />
-        <asp:Label ID="Label3" runat="server"></asp:Label>
-        <br />
-        <br />
-        <br />
-        <a href="ShowAttendance.aspx">Check For Attendance</a><br />
-    </form>
-</body>
-</html>
+</asp:Content>

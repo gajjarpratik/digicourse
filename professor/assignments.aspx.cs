@@ -14,7 +14,6 @@ public partial class professor_assignments : System.Web.UI.Page
 {
     protected void Page_Load(Object sender, EventArgs e)
     {
-
         //Connection String
         string connString = System.Configuration.ConfigurationManager.ConnectionStrings["database"].ConnectionString;
         string query = "SELECT * FROM Assignments ORDER BY date DESC";
@@ -48,12 +47,24 @@ public partial class professor_assignments : System.Web.UI.Page
             hl1.ID = reader["id"].ToString();
             hl1.Text = "Delete";
             hl1.CssClass = "more-link";
-            hl1.NavigateUrl = "~/common/deleteAssignments.aspx?id=" + reader["id"].ToString();
+            hl1.NavigateUrl = "~/professor/deleteAssignments.aspx?id=" + reader["id"].ToString();
             links.Controls.Add(hl1);
             links.Controls.Add(new LiteralControl("</br></br>"));
             i++;
         }
         conn.Close();
+
+    }
+
+    protected void checkDueDate(object source, EventArgs args)
+    { 
+        DateTime selectedDate = due_date.SelectedDate;
+        if (DateTime.Compare(selectedDate, DateTime.Now) <= 0)
+            Label1.Text = "Select Future Date";
+        else 
+        {
+            Label1.Text = "";
+        }
 
     }
 
@@ -64,8 +75,11 @@ public partial class professor_assignments : System.Web.UI.Page
         string fileExt = System.IO.Path.GetExtension(file.PostedFile.FileName).Substring(1);
         long fileSize = file.PostedFile.ContentLength;
         DateTime dueDate = due_date.SelectedDate;
-        
-
+        if (DateTime.Compare(dueDate, DateTime.Now) <= 0)
+        {
+            Label1.Text = "Select Future Date";
+            return;
+        }
         if (fileSize < 10485760 && fileExt.Equals("pdf"))
         {
             //Connection String
@@ -104,7 +118,7 @@ public partial class professor_assignments : System.Web.UI.Page
 
             // setup mail message
             conn.Close();
-
+            Response.Redirect(Request.RawUrl, true);
         }
         else
         {

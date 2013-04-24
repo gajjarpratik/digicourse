@@ -1,35 +1,28 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="announcements.aspx.cs" Inherits="professor_announcements" MasterPageFile="~/MasterPage.master" %>
 <%@ MasterType VirtualPath="~/MasterPage.master" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-      <br />
-            <br />
-            <br />
-            <br />
-            <asp:TextBox ID="NewAnnouncementText" runat="server" Height="130px" Width="591px"></asp:TextBox>
-            <br />
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Post Announcement" Width="128px" />
-&nbsp;&nbsp;&nbsp;&nbsp;
-      <asp:Button ID="Button2" runat="server" Text="Cancel" Width="122px" OnClick="Button2_Click" />
-      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Announcement]">
-      </asp:SqlDataSource>
-            <br />
-     <div style="height:403px; width:879px; margin-left: 80px;">        
-    <div style="float:left;height:403px; width:224px;">
-        &nbsp;&nbsp;</div>
-            </div>
-        <br />
-        
-        
-    
-
-
-
+<asp:Content ContentPlaceHolderID="head" runat="server">
+    <title>DigiCourse | Announcements</title>
+    <link rel="stylesheet" href="../stylesheets/dashboard.css" type="text/css" />
 </asp:Content>
 
-
-
-<asp:Content ID="Content2" runat="server" contentplaceholderid="head">
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <div class="main-dashboard">
+        <div class="left">
+            <h4> Make Announcement</h4>
+                <asp:TextBox ID="NewAnnouncementText" runat="server" ToolTip="Annoucement" Height="237px" Width="237px"></asp:TextBox><br />                
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="NewAnnouncementText" runat="server" ErrorMessage="Enter Announcement"></asp:RequiredFieldValidator>
+                <br /> 
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Post Announcement"/><br />
+                <br /><asp:Label ID="success" runat="server"></asp:Label>            
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:database %>" SelectCommand="SELECT * FROM [Announcement]"></asp:SqlDataSource>   
+         </div>
+        <div class="right"> 
+            <h4>Annoucements</h4> 
+            <asp:Panel ID="Announcements" runat="server"></asp:Panel>
+         
+        </div>
+    </div>
 </asp:Content>
 
 

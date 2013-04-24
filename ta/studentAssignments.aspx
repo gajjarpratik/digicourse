@@ -8,9 +8,11 @@
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="left">
-        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="name" DataValueField="id" OnSelectedIndexChanged="assignment_select"></asp:DropDownList>
+        <h4>Select Assignment</h4>
+        <asp:DropDownList ID="assignmentNumber" runat="server" DataSourceID="SqlDataSource1" AutoPostBack="true" DataTextField="name"  DataValueField="id" OnSelectedIndexChanged="assignment_select_change"></asp:DropDownList>
     </div>
     <div class="right">
+        <h4>Uploaded Assignments</h4>
         <asp:Panel ID="assignments" runat="server"></asp:Panel>
     </div>
     

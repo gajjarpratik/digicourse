@@ -61,6 +61,39 @@ public partial class professor_Dashboard : System.Web.UI.Page
             assignments_links.Controls.Add(new LiteralControl("<br/>Due Date:&nbsp;&nbsp;" + reader1["due_date"].ToString() + "<br/><br/>"));
         }
         conn.Close();
+
+        string query2 = "SELECT TOP 4 * FROM Announcement ORDER BY date DESC, Time DESC";
+        SqlCommand cmd2 = new SqlCommand();
+        cmd2.Connection = conn;
+        cmd2.CommandText = query2;
+
+        conn.Open();
+        
+        var reader2 = cmd2.ExecuteReader();
+        
+        while (reader2.Read())
+        {
+
+            //File Link
+
+            //HyperLink hl = new HyperLink();
+
+            //hl.ID = "Hyperlink" + i++;
+
+            //hl.Text = reader2["announcement"].ToString();
+
+            //hl.NavigateUrl = "~/professor/announcements.aspx";
+
+            //Announcements.Controls.Add(hl);
+            string date = reader2["date"].ToString();
+            Announcements.Controls.Add(new LiteralControl("<br/>" + reader2["announcement"].ToString() + "<br/>"));
+            Announcements.Controls.Add(new LiteralControl("<br/>Date:&nbsp;&nbsp;" + date.Substring(0,9) + "&nbsp;&nbsp;" + reader2["time"].ToString() + "<br/><br/>"));
+
+        }
+        reader.Close();
+        reader1.Close();
+        reader2.Close();
+        conn.Close();
     }
 
 }
