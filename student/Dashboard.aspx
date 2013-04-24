@@ -30,15 +30,12 @@
         </div>
         <div class="annoucements">
             <h4>Announcements</h4>
+            <asp:Panel ID="Announcements" runat="server" Height="109px"></asp:Panel>
+            <div class="more">
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-        </div>
+            <a href="announcements.aspx">More Announcement</a>
+            </div>
+         </div>
         
     </div>
     

@@ -7,6 +7,7 @@
             <br />
             <br />
             <asp:TextBox ID="NewAnnouncementText" runat="server" Height="130px" Width="591px"></asp:TextBox>
+            <asp:ListBox ID="ListBox1" runat="server" Height="137px" Width="189px"></asp:ListBox>
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Post Announcement" Width="128px" />
 &nbsp;&nbsp;&nbsp;&nbsp;

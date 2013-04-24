@@ -96,5 +96,38 @@ public partial class student_Default : System.Web.UI.Page
             conn2.Close();
         }
         conn.Close();
+
+        string query3 = "SELECT TOP 4 * FROM Announcement ORDER BY date DESC, Time DESC";
+        SqlCommand cmd3 = new SqlCommand();
+        cmd3.Connection = conn;
+        cmd3.CommandText = query3;
+
+        conn.Open();
+
+        var reader3 = cmd3.ExecuteReader();
+
+        while (reader3.Read())
+        {
+
+            //File Link
+
+            //HyperLink hl = new HyperLink();
+
+            //hl.ID = "Hyperlink" + i++;
+
+            //hl.Text = reader2["announcement"].ToString();
+
+            //hl.NavigateUrl = "~/professor/announcements.aspx";
+
+            //Announcements.Controls.Add(hl);
+            string date = reader3["date"].ToString();
+            Announcements.Controls.Add(new LiteralControl("<br/>" + reader3["announcement"].ToString() + "<br/>"));
+            Announcements.Controls.Add(new LiteralControl("<br/>Date:&nbsp;&nbsp;" + date.Substring(0, 9) + "&nbsp;&nbsp;" + reader3["time"].ToString() + "<br/><br/>" + "<hr>"));
+
+        }
+
+        conn.Close();
+
+
     }
 }

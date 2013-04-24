@@ -13,7 +13,7 @@
               
     </div>
         <br />
-        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/login.aspx" OnCreatedUser="CreateUserWizard1_CreatedUser">
+        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/login.aspx" OnCreatedUser="CreateUserWizard1_CreatedUser" LoginCreatedUser ="False">
             <WizardSteps>
                 <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server" Title="Step 1: Basic User Information">
 
