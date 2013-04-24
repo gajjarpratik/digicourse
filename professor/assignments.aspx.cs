@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
 using System.Net.NetworkInformation;
+using System.Web.Security;
 
 
 public partial class professor_assignments : System.Web.UI.Page
@@ -106,18 +107,16 @@ public partial class professor_assignments : System.Web.UI.Page
             upload_status.Text = "Assignment Uploaded Successfully";
             conn.Close();
 
-            SqlCommand cmd1 = new SqlCommand("SELECT * from Login_Info", conn);
-            conn.Open();
-            SqlDataReader rdr1 = cmd1.ExecuteReader();
-            string student_email;
-            while (rdr1.Read())
+            List<String> usernames = Roles.GetUsersInRole("student").ToList();
+            string emails;
+            if (usernames.Count != 0)
             {
-                student_email = (string)rdr1["Email"];
-                Send_Mail(student_email, a);
+                foreach (string k in usernames)
+                {
+                    emails = Membership.GetUser(k).Email;
+                    Send_Mail(emails, name);
+                }
             }
-
-            // setup mail message
-            conn.Close();
             Response.Redirect(Request.RawUrl, true);
         }
         else
