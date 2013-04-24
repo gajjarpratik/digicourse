@@ -10,7 +10,7 @@
     <div class="main-dashboard">
         <div class="left">
             <h4> Make Announcement</h4>
-                <asp:TextBox ID="NewAnnouncementText" runat="server" ToolTip="Annoucement" Height="237px" Width="237px"></asp:TextBox><br />                
+                <asp:TextBox ID="NewAnnouncementText" runat="server" ToolTip="Annoucement" Height="180px" Width="240px" TextMode="MultiLine"></asp:TextBox><br />                
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="NewAnnouncementText" runat="server" ErrorMessage="Enter Announcement"></asp:RequiredFieldValidator>
                 <br /> 
                 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Post Announcement"/><br />

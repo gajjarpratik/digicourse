@@ -60,6 +60,7 @@ public partial class student_submitAssignments : System.Web.UI.Page
         DateTime submissionDate = DateTime.Now;
         DateTime due_date = DateTime.Parse(Context.Request["dueDate"]);
         Guid userGuid = (Guid)Membership.GetUser().ProviderUserKey;
+        string username = Membership.GetUser().UserName;
 
         if (DateTime.Compare(submissionDate, due_date) <= 0)
             late = "no";
@@ -90,13 +91,14 @@ public partial class student_submitAssignments : System.Web.UI.Page
             }
             else
             {
-                query = "INSERT INTO studentAssignments (userid,id,name,extension,file_content,dateOfSubmission,late,checked) VALUES(@userid,@id,@name,@extension,@file,@date,@late,@checked)";
+                query = "INSERT INTO studentAssignments (userid,id,username,name,extension,file_content,dateOfSubmission,late,checked) VALUES(@userid,@id,@username,@name,@extension,@file,@date,@late,@checked)";
                 conn.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandText = query;
                 cmd.Parameters.AddWithValue("@userid", userGuid.ToString());
                 cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@name", name);
                 cmd.Parameters.AddWithValue("@extension", fileExt);
                 cmd.Parameters.AddWithValue("@file", fileData);
@@ -108,6 +110,8 @@ public partial class student_submitAssignments : System.Web.UI.Page
 
             upload_status.Text = "Assignment Uploaded Successfully";
             conn.Close();
+
+            Response.Redirect(Request.RawUrl, true);
         }
         else
         {
