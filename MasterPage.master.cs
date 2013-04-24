@@ -19,6 +19,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
         if (HttpContext.Current.User.Identity.IsAuthenticated)
         {
+            HyperLink change = (HyperLink)Page.Master.FindControl("HyperLink7");
+            change.NavigateUrl = "~/common/ChangePassword.aspx";
+            change.Text = "Change Password";
+
             string name = HttpContext.Current.User.Identity.Name;   
             if (Roles.IsUserInRole(name, "admin"))
             {

@@ -30,10 +30,9 @@
         </div>
         <div class="annoucements">
             <h4>Announcements</h4>
-            <asp:Panel ID="Announcements" runat="server" Height="109px"></asp:Panel>
+            <asp:Panel ID="Announcements" runat="server"></asp:Panel>
             <div class="more">
-            <br />
-            <a href="announcements.aspx">More Announcement</a>
+            <a href="~/student/announcements.aspx">More Announcement</a>
             </div>
          </div>
         

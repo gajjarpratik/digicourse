@@ -109,18 +109,6 @@ public partial class student_Default : System.Web.UI.Page
 
         while (reader3.Read())
         {
-
-            //File Link
-
-            //HyperLink hl = new HyperLink();
-
-            //hl.ID = "Hyperlink" + i++;
-
-            //hl.Text = reader2["announcement"].ToString();
-
-            //hl.NavigateUrl = "~/professor/announcements.aspx";
-
-            //Announcements.Controls.Add(hl);
             string date = reader3["date"].ToString();
             Announcements.Controls.Add(new LiteralControl("<br/>" + reader3["announcement"].ToString() + "<br/>"));
             Announcements.Controls.Add(new LiteralControl("<br/>Date:&nbsp;&nbsp;" + date.Substring(0, 9) + "&nbsp;&nbsp;" + reader3["time"].ToString() + "<br/><br/>" + "<hr>"));

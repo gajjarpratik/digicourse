@@ -17,7 +17,7 @@
                         <asp:CheckBox ID="RememberMe" runat="server" Text="Remember Me" /><br />
                         <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
                         <asp:Button ID="LoginButton" runat="server" CssClass="loginButton" CommandName="Login" Text="Log In" ValidationGroup="Login1" />
-
+                        <br /><a href="RecoverPassword.aspx" >Recover Password</a>
                     </fieldset>                    
                 </div>
             </LayoutTemplate>
