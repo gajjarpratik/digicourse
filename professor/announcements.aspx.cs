@@ -56,7 +56,8 @@ public partial class professor_announcements : System.Web.UI.Page
             }
         };
         success.Text = "Announcement Posted Successfully";
-        Response.Redirect(Request.RawUrl, true);
+        Response.Redirect("~/professor/announcements.aspx");
+        //UpdatePanel1.Update();
     }
    protected void Send_Mail(string student_email, string msg)
     {

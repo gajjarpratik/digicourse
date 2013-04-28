@@ -10,8 +10,7 @@
     <div class="main-dashboard">
         <div class="content">
             <h4>Annoucements</h4> 
-            <asp:Panel ID="Announcements" runat="server"></asp:Panel>
-         
+            <asp:Panel ID="Announcements" runat="server"></asp:Panel>         
         </div>
     </div>
 </asp:Content>

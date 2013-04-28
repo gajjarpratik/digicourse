@@ -50,7 +50,7 @@
                     </LoggedInTemplate>
                 </asp:LoginView>
                 <asp:LoginName ID="LoginName1" CssClass="login-name"  runat="server" />
-                    <asp:HyperLink ID="HyperLink7" runat="server"></asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink7" CssClass="login-name" Font-Size="small" ForeColor="#2F3C40" runat="server"></asp:HyperLink>
                 </div>
             </div>
         </div>

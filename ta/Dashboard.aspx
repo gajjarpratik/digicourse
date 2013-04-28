@@ -29,12 +29,13 @@
         </div>
         <div class="annoucements">
             <h4>Announcements</h4>
-            <asp:Panel ID="Announcements" runat="server"></asp:Panel>
-            <div class="more">
-            <br />
-            <a href="announcements.aspx">More/Make New Announcement</a>
-            </div>
-            
+            <div class="content">
+                <asp:Panel ID="Announcements" runat="server"></asp:Panel>
+                <div class="more">
+                <br />
+                <a href="announcements.aspx">More/Make New Announcement</a>
+                </div>
+            </div>            
         </div>
         
     </div>

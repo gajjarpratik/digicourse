@@ -49,7 +49,7 @@ public partial class professor_studentAssignments : System.Web.UI.Page
                 assignments.Controls.Add(new LiteralControl("<br/>"));
 
             assignments.Controls.Add(new LiteralControl("</br>"));
-            assignments.Controls.Add(new LiteralControl("Due Date of Submission: &nbsp;&nbsp;" + reader["dateOfSubmission"].ToString() + "<br/>"));
+            assignments.Controls.Add(new LiteralControl("Date of Submission: &nbsp;&nbsp;" + reader["dateOfSubmission"].ToString() + "<br/>"));
 
             if (reader["grades"] == DBNull.Value)
             {

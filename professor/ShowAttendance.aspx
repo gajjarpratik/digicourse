@@ -6,15 +6,31 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <ContentTemplate>
     <div class="left">
         <h4>Select Student</h4>
-        <asp:ListBox ID="ListBox1" runat="server" AutoPostBack="True" DataTextField="name" DataValueField="userid" Font-Size="Medium" Height="100%" Width="280" ></asp:ListBox>
+        <div class="content"> 
+        <asp:ListBox ID="ListBox1" runat="server" AutoPostBack="True" DataTextField="name" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" DataValueField="userid" Font-Size="Medium" Height="100%" Width="250" ></asp:ListBox>
+        <br />
+        <br />
+        </div>
+        
+        <h4>Select Date</h4>
+        <div class="content"> 
+        <asp:ListBox ID="ListBox2" runat="server" AutoPostBack="True" DataTextField="name" OnSelectedIndexChanged="ListBox2_SelectedIndexChanged" DataValueField="userid" Font-Size="Medium" Height="100%" Width="250"></asp:ListBox>
+        <br />
+        </div> 
     </div>
-
-    <div class="right">
+        <asp:ScriptManager EnablePartialRendering="true" ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <div class="right">                   
         <h4>Attendance Record</h4>
-        <asp:Panel ID="attendance" runat="server"></asp:Panel>
+        <div class="content"> 
+            <asp:Panel ID="attendance" runat="server"></asp:Panel>
+        </div>
     </div>
+        </ContentTemplate>
+        </asp:UpdatePanel> 
     
         <br />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:database %>" SelectCommand="SELECT * FROM [Attendance]"></asp:SqlDataSource>

@@ -9,7 +9,9 @@
     <div class="main-dashboard">
         <div class="content">
             <h4>Give Grade for <asp:Label ID="name" runat="server" Text="Label"></asp:Label> Assignment</h4>
-            <asp:Panel ID="submittedGrade" runat="server"></asp:Panel>
+            <div class="content">
+                <asp:Panel ID="submittedGrade" runat="server"></asp:Panel>
+            </div>
         </div>
     </div>
 

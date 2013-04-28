@@ -127,6 +127,7 @@
 .content {
     width:100%;
     margin:0 auto;
+    padding-left:20px;
 }
 
 @media only screen and (min-width:150px) and (max-width:600px) {

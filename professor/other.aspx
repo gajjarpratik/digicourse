@@ -10,10 +10,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div class="main-dashboard">
         <h4>Options</h4>
-        
+        <div class="content">
             <a href="add_students.aspx" class="more-link">New Student</a><br /><br />
             <a href="add_students.aspx" class="more-link">Permissions</a>
-        
+        </div>
     </div>
  </asp:Content>
   

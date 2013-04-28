@@ -55,7 +55,7 @@ public partial class professor_assignments : System.Web.UI.Page
             hl1.CssClass = "more-link";
             hl1.NavigateUrl = "~/student/submitAssignments.aspx?id="+ reader["id"].ToString()+"&name="+reader["name"].ToString()+"&dueDate=" + reader["due_date"].ToString();
             links.Controls.Add(hl1);
-            links.Controls.Add(new LiteralControl("</br>"));
+            links.Controls.Add(new LiteralControl("</br><br/>"));
             i++;
 
 

@@ -30,9 +30,11 @@
         </div>
         <div class="annoucements">
             <h4>Announcements</h4>
+            <div class="content">
             <asp:Panel ID="Announcements" runat="server"></asp:Panel>
             <div class="more">
-            <a href="~/student/announcements.aspx">More Announcement</a>
+            <a href="announcements.aspx">More Announcement</a>
+            </div>
             </div>
          </div>
         
