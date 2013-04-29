@@ -111,7 +111,7 @@ public partial class student_Default : System.Web.UI.Page
         {
             string date = reader3["date"].ToString();
             Announcements.Controls.Add(new LiteralControl("<br/>" + reader3["announcement"].ToString() + "<br/>"));
-            Announcements.Controls.Add(new LiteralControl("<br/>Date:&nbsp;&nbsp;" + date.Substring(0, 9) + "&nbsp;&nbsp;" + reader3["time"].ToString() + "<br/><br/>" + "<hr>"));
+            Announcements.Controls.Add(new LiteralControl("<br/>Date:&nbsp;&nbsp;" + date.Substring(0, 9) + "&nbsp;&nbsp;" + reader3["time"].ToString() + "<br/><br/>" + "<hr/>"));
 
         }
 

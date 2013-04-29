@@ -75,7 +75,7 @@ public partial class professor_Dashboard : System.Web.UI.Page
         {
             string date = reader2["date"].ToString();
             Announcements.Controls.Add(new LiteralControl("<br/><b>" + reader2["announcement"].ToString() + "</b><br/>"));
-            Announcements.Controls.Add(new LiteralControl("<br/>Date:&nbsp;&nbsp;" + date.Substring(0,9) + "&nbsp;&nbsp;" + reader2["time"].ToString() + "<br/><br/>"));
+            Announcements.Controls.Add(new LiteralControl("<br/>Date:&nbsp;&nbsp;" + date.Substring(0, 9) + "&nbsp;&nbsp;" + reader2["time"].ToString() + "<br/><br/><hr/>"));
 
         }
         reader.Close();

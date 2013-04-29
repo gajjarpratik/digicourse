@@ -61,8 +61,8 @@
                 <li><asp:HyperLink ID="HyperLink1" NavigateUrl="Default.aspx" runat="server" Text="Home"></asp:HyperLink></li>
                 <li><asp:HyperLink ID="HyperLink2" NavigateUrl="courseDescription.aspx" runat="server" Text="Course Description"></asp:HyperLink></li>
                 <li><asp:HyperLink ID="HyperLink3" NavigateUrl="professorBio.aspx" runat="server" Text="Professor Bio"></asp:HyperLink></li>
-                <li><asp:HyperLink ID="HyperLink4" NavigateUrl="about.aspx" runat="server" Text="About Us"></asp:HyperLink></li>
-                <li><asp:HyperLink ID="HyperLink5" runat="server"></asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink4" NavigateUrl="ta_info.aspx" runat="server" Text="TA Info"></asp:HyperLink></li>
+                <li><asp:HyperLink ID="HyperLink5" NavigateUrl="about.aspx" runat="server" Text="About Us" runat="server"></asp:HyperLink></li>
                 <li><asp:HyperLink ID="HyperLink6" runat="server"></asp:HyperLink></li>
             </ul>
         </nav>       

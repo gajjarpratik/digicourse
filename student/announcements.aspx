@@ -8,8 +8,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div class="main-dashboard">
+        
+    <h4>Annoucements</h4> 
         <div class="content">
-            <h4>Annoucements</h4> 
             <asp:Panel ID="Announcements" runat="server"></asp:Panel>         
         </div>
     </div>

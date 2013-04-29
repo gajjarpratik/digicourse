@@ -32,7 +32,7 @@
             <h4>Assignments</h4><br />
             <div class="content">
                 <asp:Panel ID="links" runat="server"></asp:Panel>
-            <//div>
+            </div>
         </div>       
     </div>
 </asp:Content>

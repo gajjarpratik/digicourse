@@ -15,6 +15,6 @@
             <i>zip format only</i><br /><asp:FileUpload ID="file" CssClass="uploadButton" runat="server" /><br /><asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="file" CssClass="loginValidator" runat="server" ErrorMessage="  *Please Select File to Upload"></asp:RequiredFieldValidator><br /><br />
             <asp:Button ID="upload" runat="server" Text="Upload" CssClass="uploadButton" OnClick="upload_Click" />
             <asp:Label ID="upload_status" runat="server" Text=""></asp:Label><br /><br />
-        <//div>
+        </div>
     </div>
 </asp:Content>

@@ -9,7 +9,7 @@
     <div class="main-dashboard">
         <div class="content">
             <h4>Submit Comment for <asp:Label ID="name" runat="server" Text="Label"></asp:Label> Assignment</h4>
-            <div class="content">
+            <div class="content">                
                 <asp:Panel ID="submittedGrade" runat="server"></asp:Panel>
             </div>
         </div>

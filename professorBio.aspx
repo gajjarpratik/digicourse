@@ -13,7 +13,8 @@
         <h2>Thomas Skinner</h2>
         <p> Professor<br />
             Electrical and Computer Engineering<br />
-            Boston University
+            Boston University<br /><br />
+            tom@bu.edu
         </p>
     </div>
 

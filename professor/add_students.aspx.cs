@@ -10,6 +10,13 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Data.SqlClient;
+using System.Net.Mail;
+using System.Configuration;
+using System.Net.NetworkInformation;
+using System.Web.Security;
+using System.Linq;
+using System.Net;
+using System.Web.Security;
 
 public partial class professor_add_students : System.Web.UI.Page
 {
@@ -21,10 +28,28 @@ public partial class professor_add_students : System.Web.UI.Page
     }
     protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
     {
-               
-        
+
+        Send_Mail();
     }
 
+    protected void Send_Mail()
+    {
+        MailMessage message = new MailMessage();
+        message.From = new MailAddress("digicourse512@gmail.com");
+        message.To.Add(new MailAddress(CreateUserWizard1.Email));
+        message.Subject = "Welcome to Digicourse";
+        message.Body = "Hello " + CreateUserWizard1.UserName + "," + "\nWelcome to digicourse." + "\nYour Username is-> " + CreateUserWizard1.UserName + "\nYour password is ->  " + CreateUserWizard1.Password +
+                        "\nKindly change your password when you login the first time";
+
+        // setup mail client
+        SmtpClient mailClient = new SmtpClient("smtp.gmail.com", 587);
+        mailClient.Credentials = new NetworkCredential("digicourse512@gmail.com", "BostonUniversity");
+        mailClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+        mailClient.EnableSsl = true;
+
+        // send message
+        mailClient.Send(message);
+    }
 
     // Activate event fires when the user hits "next" in the CreateUserWizard
     public void AssignUserToRoles_Activate(object sender, EventArgs e)

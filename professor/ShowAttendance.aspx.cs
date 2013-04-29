@@ -31,7 +31,7 @@ public partial class ShowAttendance : System.Web.UI.Page
 
         SqlConnection conn = new SqlConnection(connString);
         conn.Open();
-        string query = "SELECT date,present_absent FROM Attendance";
+        string query = "SELECT date,present_absent FROM Attendance ORDER BY date DESC";
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = conn;
         cmd.CommandText = query;

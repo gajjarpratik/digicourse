@@ -31,8 +31,16 @@ public partial class professor_announcements : System.Web.UI.Page
         {
             string date = reader2["date"].ToString();
             Announcements.Controls.Add(new LiteralControl("<br/><b>" + reader2["announcement"].ToString() + "</b><br/>"));
-            Announcements.Controls.Add(new LiteralControl("<br/>Date:&nbsp;&nbsp;" + date.Substring(0, 9) + "&nbsp;&nbsp;" + reader2["time"].ToString() + "<br/><br/>"));
+            Announcements.Controls.Add(new LiteralControl("<br/>Date:&nbsp;&nbsp;" + date.Substring(0, 9) + "&nbsp;&nbsp;" + reader2["time"].ToString() + "<br/><br/><hr/>"));
 
+            //Delete
+            HyperLink hl1 = new HyperLink();
+            hl1.ID = reader2["id"].ToString();
+            hl1.Text = "Delete";
+            hl1.CssClass = "more-link";
+            hl1.NavigateUrl = "~/professor/deleteAnnouncements.aspx?id=" + reader2["id"].ToString();
+            Announcements.Controls.Add(hl1);
+            Announcements.Controls.Add(new LiteralControl("</br></br>"));
         }
     }
     protected void Button1_Click(object sender, EventArgs e)

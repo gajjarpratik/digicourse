@@ -38,7 +38,7 @@ public partial class ErrorPages_error : System.Web.UI.Page
         else
         {
             HyperLink menu = (HyperLink)Page.FindControl("HyperLink1");
-            menu.NavigateUrl = "~/Deafult.aspx";
+            menu.NavigateUrl = "~/Default.aspx";
             menu.Text = "Home";
         }
     }

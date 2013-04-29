@@ -89,6 +89,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 menu = (HyperLink)Page.Master.FindControl("HyperLink4");
                 menu.NavigateUrl = "~/ta/announcements.aspx";
                 menu.Text = "Announcements";
+
+                menu = (HyperLink)Page.Master.FindControl("HyperLink5");
+                menu.NavigateUrl = "~/ta/course_material.aspx";
+                menu.Text = "Course Material";
             }
             else if (Roles.IsUserInRole(name, "student"))
             {
@@ -105,7 +109,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 menu.NavigateUrl = "~/student/assignments.aspx";
                 menu.Text = "Assignments";
 
-                menu = (HyperLink)Page.Master.FindControl("HyperLink4");
+                menu = (HyperLink)Page.Master.FindControl("HyperLink5");
                 menu.NavigateUrl = "~/student/course_material.aspx";
                 menu.Text = "Course Material";
             }

@@ -13,11 +13,16 @@ public partial class ta_submitGrade : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         submittedGrade.Controls.Add(new LiteralControl("<br/>Comment:<br/>"));
-        name.Text = Context.Request["username"];
+        name.Text = Context.Request["username"];        
         comments.TextMode = TextBoxMode.MultiLine;
         comments.Height = 130;
         comments.ID = "commentbox";
         submittedGrade.Controls.Add(comments);
+
+        RequiredFieldValidator rf = new RequiredFieldValidator();
+        rf.ControlToValidate = "commentbox";
+        rf.ErrorMessage = "Please Enter Comment";
+        submittedGrade.Controls.Add(rf);
 
         Button submit = new Button();
         submit.Text = "Submit";

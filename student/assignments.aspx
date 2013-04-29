@@ -7,8 +7,8 @@
 
 <asp:Content ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div class="main-dashboard">        
+        <h4>Assignments</h4>
         <div class="content">
-            <h4>Assignments</h4><br />
             <asp:Panel ID="links" runat="server"></asp:Panel>
         </div>       
     </div>
